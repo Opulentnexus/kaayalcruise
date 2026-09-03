@@ -4,1257 +4,3773 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Kaayal Cruise</title>
+    <title>Kayal Cruise | Houseboat Cruises in Alleppey & Kumarakom</title>
+
+    <meta name="description"
+        content="Experience Kerala on the water with Kayal Cruise. Houseboat cruises in Alleppey and Kumarakom with traditional Kerala cuisine, comfortable accommodation and scenic backwater journeys.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        /* =========================================
+           RESET
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            background: #f7f5ef;
+            color: #17201e;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+.brand img {
+    height: 65px;
+    width: auto;
+    display: block;
+}
+
+
+
+
+
+        button,
+        input,
+        select,
+        textarea {
+            font-family: inherit;
+        }
+
+        :root {
+            --dark: #17201e;
+            --dark-2: #0d1715;
+            --cream: #f7f5ef;
+            --cream-2: #ebe5d8;
+            --gold: #b89555;
+            --gold-light: #dfbd78;
+            --muted: #66716d;
+            --white: #ffffff;
+            --border: rgba(23, 32, 30, .10);
+            --max: 1240px;
+        }
+
+
+        /* =========================================
+           COMMON
+        ========================================= */
+
+        .container {
+            width: min(var(--max), calc(100% - 48px));
+            margin: auto;
+        }
+
+        .section {
+            padding: 110px 0;
+        }
+
+        .section-dark {
+            background: var(--dark);
+            color: white;
+        }
+
+        .section-heading {
+            max-width: 760px;
+            margin-bottom: 55px;
+        }
+
+        .eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            color: var(--gold);
+
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+
+            margin-bottom: 18px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 38px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .section-title {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(38px, 5vw, 68px);
+            line-height: 1.05;
+            font-weight: 500;
+            letter-spacing: -1.5px;
+        }
+
+        .section-description {
+            margin-top: 20px;
+
+            color: var(--muted);
+
+            font-size: 16px;
+            line-height: 1.8;
+
+            max-width: 680px;
+        }
+
+        .section-dark .section-description {
+            color: rgba(255,255,255,.68);
+        }
+
+
+        /* =========================================
+           HEADER
+        ========================================= */
+
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+
+            background: rgba(250,249,245,.90);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid rgba(25,45,41,.08);
+
+            transition: .3s ease;
+        }
+
+        .site-header.scrolled {
+            background: rgba(250,249,245,.97);
+            box-shadow: 0 8px 35px rgba(20,35,31,.08);
+        }
+
+        .header-container {
+            width: min(var(--max), calc(100% - 48px));
+            height: 82px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .brand strong {
+            font-family: "Playfair Display", serif;
+            font-size: 24px;
+            letter-spacing: 3px;
+            color: var(--dark);
+        }
+
+        .brand span {
+            margin-top: 6px;
+
+            color: var(--gold);
+
+            font-size: 8px;
+            letter-spacing: 3px;
+            font-weight: 700;
+        }
+
+        .desktop-nav {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+        }
+
+        .nav-link {
+            position: relative;
+
+            padding: 8px 0;
+
+            color: #53605c;
+
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .nav-link::after {
+            content: "";
+
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+
+            width: 0;
+            height: 2px;
+
+            background: var(--gold);
+
+            transform: translateX(-50%);
+            transition: .3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--dark);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .header-button {
+            padding: 13px 20px;
+
+            border-radius: 30px;
+
+            background: var(--dark);
+            color: white;
+
+            font-size: 12px;
+            font-weight: 600;
+
+            transition: .3s ease;
+        }
+
+        .header-button:hover {
+            background: var(--gold);
+        }
+
+
+        /* =========================================
+           MOBILE MENU
+        ========================================= */
+
+        .menu-button {
+            display: none;
+
+            width: 44px;
+            height: 44px;
+
+            border: 0;
+            border-radius: 50%;
+
+            background: var(--dark);
+            color: white;
+
+            cursor: pointer;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 82px;
+            left: 0;
+
+            width: 100%;
+
+            padding: 25px;
+
+            background: #faf9f5;
+
+            border-bottom: 1px solid var(--border);
+
+            transform: translateY(-120%);
+            transition: .4s ease;
+
+            z-index: 9998;
+        }
+
+        .mobile-menu.active {
+            transform: translateY(0);
+        }
+
+        .mobile-menu a {
+            display: block;
+
+            padding: 16px 0;
+
+            border-bottom: 1px solid var(--border);
+
+            font-weight: 600;
+        }
+
+        .mobile-whatsapp {
+            margin-top: 20px;
+
+            padding: 16px;
+
+            background: #17201e;
+            color: white;
+
+            text-align: center;
+
+            border-radius: 12px;
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .hero {
+            position: relative;
+
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            color: white;
+
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: -3;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            animation: heroZoom 12s ease-in-out infinite alternate;
+        }
+
+        @keyframes heroZoom {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.06);
+            }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(7,18,16,.88) 0%,
+                    rgba(7,18,16,.62) 45%,
+                    rgba(7,18,16,.18) 100%
+                );
+        }
+
+        .hero-container {
+            width: min(var(--max), calc(100% - 48px));
+            margin: auto;
+
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 760px;
+        }
+
+        .hero-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            margin-bottom: 24px;
+
+            color: var(--gold-light);
+
+            font-size: 11px;
+            letter-spacing: 3px;
+            font-weight: 700;
+        }
+
+        .hero-eyebrow::before {
+            content: "";
+            width: 40px;
+            height: 1px;
+            background: var(--gold-light);
+        }
+
+        .hero h1 {
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(52px, 7vw, 96px);
+
+            font-weight: 500;
+            line-height: .98;
+
+            letter-spacing: -3px;
+        }
+
+        .hero h1 span {
+            color: var(--gold-light);
+        }
+
+        .hero-description {
+            max-width: 650px;
+
+            margin-top: 30px;
+
+            color: rgba(255,255,255,.78);
+
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+
+            margin-top: 38px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 22px;
+
+            padding: 17px 22px;
+
+            background: var(--gold);
+            color: white;
+
+            border-radius: 8px;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            transition: .3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            background: var(--gold-light);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+
+            padding: 17px 22px;
+
+            border: 1px solid rgba(255,255,255,.35);
+            border-radius: 8px;
+
+            color: white;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            transition: .3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,.1);
+        }
+
+
+        /* =========================================
+           STORY
+        ========================================= */
+
+        .story-grid {
+            display: grid;
+
+            grid-template-columns: .85fr 1.15fr;
+
+            gap: 80px;
+
+            align-items: start;
+        }
+
+        .story-sticky {
+            position: sticky;
+            top: 130px;
+        }
+
+        .story-title {
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(38px, 5vw, 62px);
+
+            line-height: 1.08;
+
+            font-weight: 500;
+        }
+
+        .story-content p {
+            margin-bottom: 22px;
+
+            color: #5e6864;
+
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        .story-subtitle {
+            margin: 38px 0 15px;
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 28px;
+
+            color: var(--dark);
+        }
+
+        .quote-box {
+            margin-top: 40px;
+
+            padding: 30px;
+
+            background: var(--cream-2);
+
+            border-left: 3px solid var(--gold);
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 24px;
+            line-height: 1.5;
+        }
+
+
+        /* =========================================
+           DESTINATIONS
+        ========================================= */
+
+        .destination-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 24px;
+        }
+
+        .destination-card {
+            position: relative;
+
+            min-height: 540px;
+
+            overflow: hidden;
+
+            border-radius: 18px;
+
+            color: white;
+        }
+
+        .destination-card img {
+            position: absolute;
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: transform .7s ease;
+        }
+
+        .destination-card:hover img {
+            transform: scale(1.06);
+        }
+
+        .destination-overlay {
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    0deg,
+                    rgba(7,18,16,.9),
+                    rgba(7,18,16,.08) 70%
+                );
+        }
+
+        .destination-content {
+            position: absolute;
+
+            left: 32px;
+            right: 32px;
+            bottom: 30px;
+        }
+
+        .destination-content small {
+            color: var(--gold-light);
+
+            font-size: 10px;
+            font-weight: 700;
+
+            letter-spacing: 3px;
+        }
+
+        .destination-content h3 {
+            margin: 8px 0 15px;
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 42px;
+            font-weight: 500;
+        }
+
+        .destination-content p {
+            color: rgba(255,255,255,.75);
+
+            line-height: 1.7;
+
+            font-size: 14px;
+        }
+
+        .destination-list {
+            margin-top: 20px;
+
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 8px;
+        }
+
+        .destination-list span {
+            padding: 8px 11px;
+
+            border: 1px solid rgba(255,255,255,.2);
+            border-radius: 30px;
+
+            font-size: 10px;
+
+            background: rgba(255,255,255,.06);
+        }
+
+
+        /* =========================================
+           EXPERIENCE
+        ========================================= */
+
+        .experience-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 70px;
+        }
+
+        .experience-text p {
+            color: rgba(255,255,255,.68);
+
+            font-size: 16px;
+            line-height: 1.9;
+
+            margin-bottom: 22px;
+        }
+
+        .offer-list {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 15px;
+
+            margin-top: 35px;
+        }
+
+        .offer-item {
+            padding: 18px;
+
+            border: 1px solid rgba(255,255,255,.10);
+
+            border-radius: 12px;
+
+            color: rgba(255,255,255,.8);
+
+            font-size: 13px;
+        }
+
+        .offer-item::before {
+            content: "✓";
+
+            color: var(--gold-light);
+
+            margin-right: 8px;
+        }
+
+        .why-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 14px;
+        }
+
+        .why-card {
+            padding: 25px;
+
+            border-radius: 14px;
+
+            background: rgba(255,255,255,.05);
+
+            border: 1px solid rgba(255,255,255,.08);
+        }
+
+        .why-number {
+            color: var(--gold-light);
+
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
+        .why-card h3 {
+            margin: 13px 0 8px;
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 23px;
+
+            font-weight: 500;
+        }
+
+        .why-card p {
+            color: rgba(255,255,255,.58);
+
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+
+        /* =========================================
+           FLEET
+        ========================================= */
+
+        .fleet-intro {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+
+            gap: 30px;
+
+            margin-bottom: 50px;
+        }
+
+        .fleet-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .fleet-card {
+            padding: 28px;
+
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 16px;
+
+            transition: .3s ease;
+        }
+
+        .fleet-card:hover {
+            transform: translateY(-6px);
+
+            box-shadow: 0 20px 50px rgba(20,35,31,.08);
+        }
+
+        .fleet-icon {
+            width: 52px;
+            height: 52px;
+
+            display: grid;
+            place-items: center;
+
+            margin-bottom: 25px;
+
+            background: var(--cream-2);
+
+            border-radius: 50%;
+
+            font-size: 22px;
+        }
+
+        .fleet-card small {
+            color: var(--gold);
+
+            font-size: 10px;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .fleet-card h3 {
+            margin: 8px 0 12px;
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 26px;
+
+            font-weight: 500;
+        }
+
+        .fleet-card p {
+            color: var(--muted);
+
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .fleet-card a {
+            display: inline-flex;
+
+            margin-top: 20px;
+
+            color: var(--gold);
+
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+
+        /* =========================================
+           CRUISE DETAILS
+        ========================================= */
+
+        .cruise-tabs {
+            display: flex;
+
+            gap: 10px;
+
+            margin-bottom: 45px;
+        }
+
+        .cruise-tab {
+            padding: 13px 20px;
+
+            border: 1px solid rgba(255,255,255,.15);
+
+            border-radius: 30px;
+
+            background: transparent;
+            color: rgba(255,255,255,.65);
+
+            cursor: pointer;
+
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .cruise-tab.active {
+            background: var(--gold);
+
+            border-color: var(--gold);
+
+            color: white;
+        }
+
+        .cruise-panel {
+            display: none;
+        }
+
+        .cruise-panel.active {
+            display: block;
+
+            animation: fadeUp .5s ease;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cruise-header {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 60px;
+
+            margin-bottom: 50px;
+        }
+
+        .cruise-header h3 {
+            font-family: "Playfair Display", serif;
+
+            font-size: 42px;
+
+            font-weight: 500;
+        }
+
+        .cruise-header p {
+            color: rgba(255,255,255,.65);
+
+            line-height: 1.8;
+        }
+
+        .time-cards {
+            display: grid;
+
+            grid-template-columns: repeat(2,1fr);
+
+            gap: 12px;
+        }
+
+        .time-card {
+            padding: 18px;
+
+            background: rgba(255,255,255,.05);
+
+            border: 1px solid rgba(255,255,255,.08);
+
+            border-radius: 12px;
+        }
+
+        .time-card span {
+            display: block;
+
+            color: var(--gold-light);
+
+            font-size: 10px;
+            letter-spacing: 1px;
+
+            margin-bottom: 6px;
+        }
+
+        .time-card strong {
+            font-size: 14px;
+        }
+
+        .timeline {
+            position: relative;
+
+            display: grid;
+
+            gap: 18px;
+        }
+
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+
+            left: 10px;
+            top: 15px;
+            bottom: 15px;
+
+            width: 1px;
+
+            background: rgba(255,255,255,.15);
+        }
+
+        .timeline-item {
+            position: relative;
+
+            display: grid;
+
+            grid-template-columns: 110px 1fr;
+
+            gap: 25px;
+
+            padding-left: 0;
+        }
+
+        .timeline-time {
+            color: var(--gold-light);
+
+            font-size: 11px;
+            font-weight: 700;
+
+            text-align: right;
+        }
+
+        .timeline-content {
+            position: relative;
+
+            padding-left: 25px;
+
+            color: rgba(255,255,255,.68);
+
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .timeline-content::before {
+            content: "";
+
+            position: absolute;
+
+            left: -5px;
+            top: 7px;
+
+            width: 10px;
+            height: 10px;
+
+            border-radius: 50%;
+
+            background: var(--gold);
+        }
+
+        .timeline-content strong {
+            display: block;
+
+            color: white;
+
+            margin-bottom: 4px;
+        }
+
+        .early-note {
+            margin-top: 45px;
+
+            padding: 25px;
+
+            background: rgba(223,189,120,.08);
+
+            border: 1px solid rgba(223,189,120,.2);
+
+            border-radius: 12px;
+        }
+
+        .early-note strong {
+            color: var(--gold-light);
+        }
+
+        .early-note p {
+            margin-top: 8px;
+
+            color: rgba(255,255,255,.65);
+
+            line-height: 1.7;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================================
+           FOOD
+        ========================================= */
+
+        .food-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 25px;
+        }
+
+        .food-card {
+            padding: 30px;
+
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 16px;
+        }
+
+        .food-card h3 {
+            margin-bottom: 20px;
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 28px;
+
+            font-weight: 500;
+        }
+
+        .food-card ul {
+            list-style: none;
+        }
+
+        .food-card li {
+            padding: 9px 0;
+
+            border-bottom: 1px solid var(--border);
+
+            color: var(--muted);
+
+            font-size: 13px;
+        }
+
+        .food-card li::before {
+            content: "•";
+
+            color: var(--gold);
+
+            margin-right: 10px;
+        }
+
+        .food-note {
+            margin-top: 25px;
+
+            color: var(--muted);
+
+            font-size: 12px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================
+           CONTACT
+        ========================================= */
+
+        .contact-grid {
+            display: grid;
+
+            grid-template-columns: .8fr 1.2fr;
+
+            gap: 70px;
+
+            align-items: start;
+        }
+
+        .contact-info p {
+            color: rgba(255,255,255,.65);
+
+            line-height: 1.8;
+
+            margin-top: 20px;
+        }
+
+        .contact-details {
+            margin-top: 35px;
+        }
+
+        .contact-detail {
+            padding: 16px 0;
+
+            border-bottom: 1px solid rgba(255,255,255,.10);
+        }
+
+        .contact-detail small {
+            display: block;
+
+            color: var(--gold-light);
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 5px;
+        }
+
+        .contact-detail span {
+            color: rgba(255,255,255,.75);
+
+            font-size: 14px;
+        }
+
+        .inquiry-form {
+            padding: 35px;
+
+            background: white;
+
+            border-radius: 18px;
+        }
+
+        .form-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 18px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+
+            gap: 7px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            color: #53605c;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            letter-spacing: .5px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+
+            padding: 14px 15px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 8px;
+
+            background: #faf9f5;
+
+            outline: none;
+
+            font-size: 13px;
+
+            color: var(--dark);
+        }
+
+        .form-group textarea {
+            min-height: 110px;
+
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--gold);
+        }
+
+        .form-submit {
+            width: 100%;
+
+            margin-top: 20px;
+
+            padding: 16px;
+
+            border: 0;
+            border-radius: 8px;
+
+            background: var(--dark);
+            color: white;
+
+            cursor: pointer;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            transition: .3s ease;
+        }
+
+        .form-submit:hover {
+            background: var(--gold);
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+            padding: 50px 0 25px;
+
+            background: #0b1210;
+
+            color: white;
+        }
+
+        .footer-grid {
+            display: grid;
+
+            grid-template-columns: 1.5fr 1fr 1fr;
+
+            gap: 50px;
+
+            padding-bottom: 45px;
+
+            border-bottom: 1px solid rgba(255,255,255,.1);
+        }
+
+        .footer-brand strong {
+            font-family: "Playfair Display", serif;
+
+            font-size: 28px;
+
+            letter-spacing: 3px;
+        }
+
+        .footer-brand p {
+            max-width: 400px;
+
+            margin-top: 15px;
+
+            color: rgba(255,255,255,.5);
+
+            line-height: 1.8;
+
+            font-size: 13px;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 18px;
+
+            color: var(--gold-light);
+
+            font-size: 10px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+        .footer-column a {
+            display: block;
+
+            margin-bottom: 10px;
+
+            color: rgba(255,255,255,.58);
+
+            font-size: 13px;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            padding-top: 20px;
+
+            color: rgba(255,255,255,.4);
+
+            font-size: 11px;
+        }
+
+
+        /* =========================================
+           WHATSAPP FLOAT
+        ========================================= */
+
+        .whatsapp-float {
+            position: fixed;
+
+            right: 22px;
+            bottom: 22px;
+
+            z-index: 999;
+
+            width: 58px;
+            height: 58px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 50%;
+
+            background: #25D366;
+            color: white;
+
+            box-shadow: 0 10px 30px rgba(0,0,0,.2);
+
+            font-size: 24px;
+
+            transition: .3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 1000px) {
+
+            .desktop-nav,
+            .header-button {
+                display: none;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .story-grid,
+            .experience-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .story-sticky {
+                position: static;
+            }
+
+            .fleet-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .cruise-header {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            .container,
+            .header-container,
+            .hero-container {
+                width: min(100% - 30px, var(--max));
+            }
+
+            .section {
+                padding: 75px 0;
+            }
+
+            .header-container {
+                height: 72px;
+            }
+
+            .mobile-menu {
+                top: 72px;
+            }
+
+            .hero {
+                min-height: 760px;
+            }
+
+            .hero h1 {
+                font-size: clamp(48px, 15vw, 70px);
+
+                letter-spacing: -2px;
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                justify-content: center;
+            }
+
+            .destination-grid,
+            .fleet-grid,
+            .food-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .destination-card {
+                min-height: 470px;
+            }
+
+            .destination-content h3 {
+                font-size: 36px;
+            }
+
+            .offer-list,
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cruise-tabs {
+                flex-wrap: wrap;
+            }
+
+            .time-cards {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .timeline-item {
+                grid-template-columns: 80px 1fr;
+
+                gap: 15px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: auto;
+            }
+
+            .inquiry-form {
+                padding: 22px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+            }
+
+        }
+
+
+        @media (max-width: 420px) {
+
+            .brand strong {
+                font-size: 20px;
+            }
+
+            .brand span {
+                font-size: 7px;
+                letter-spacing: 2px;
+            }
+
+            .hero h1 {
+                font-size: 47px;
+            }
+
+            .section-title {
+                font-size: 40px;
+            }
+
+            .time-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+
+            .timeline-time {
+                text-align: left;
+            }
+
+        }
+
+    </style>
 </head>
+
 
 <body>
 
-    <!-- =========================================
-         HEADER
-    ========================================== -->
 
-    <header class="site-header" id="siteHeader">
+<!-- =========================================
+     HEADER
+========================================= -->
 
-        <div class="header-container">
+<header class="site-header" id="header">
 
-           <!-- LOGO -->
-<a href="index.html" class="brand">
-    <img src="logo.png" alt="Azure Cruise Logo" class="brand-logo">
+    <div class="header-container">
+
+       <a href="#home" class="brand">
+    <img src="logo.png" alt="Kayal Cruise Logo">
 </a>
 
 
-            <!-- DESKTOP NAVIGATION -->
-            <nav class="desktop-nav">
+        <nav class="desktop-nav">
 
-                <a href="/" class="nav-link active">
-                    Home
-                </a>
+            <a href="#home" class="nav-link">Home</a>
 
-                <a href="#packages" class="nav-link">
-                    Cruises
-                </a>
+            <a href="#story" class="nav-link">Our Story</a>
 
-                <a href="#gallery" class="nav-link">
-                    Gallery
-                </a>
+            <a href="#destinations" class="nav-link">Destinations</a>
 
-            </nav>
+            <a href="#fleet" class="nav-link">Our Fleet</a>
+
+            <a href="#cruises" class="nav-link">Cruises</a>
+
+            <a href="#food" class="nav-link">Food</a>
+
+        </nav>
 
 
-            <!-- RIGHT SIDE BUTTONS -->
-            <div class="header-actions">
+        <a href="#contact" class="header-button">
+            Enquire Now
+        </a>
 
-                <a
-                    href="https://wa.me/919995068622"
-                    target="_blank"
-                    class="whatsapp-btn"
-                >
-                    <span class="whatsapp-icon">◉</span>
-                    <span>WhatsApp</span>
-                </a>
+
+        <button class="menu-button" id="menuButton">
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================
+     MOBILE MENU
+========================================= -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <a href="#home">Home</a>
+
+    <a href="#story">Our Story</a>
+
+    <a href="#destinations">Destinations</a>
+
+    <a href="#fleet">Our Fleet</a>
+
+    <a href="#cruises">Cruises</a>
+
+    <a href="#food">Food</a>
+
+    <a href="#contact">Contact</a>
+
+    <!-- REPLACE WHATSAPP NUMBER -->
+    <a
+        href="https://wa.me/919999999999"
+        target="_blank"
+        class="mobile-whatsapp">
+
+        Chat on WhatsApp ↗
+
+    </a>
+
+</div>
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-bg">
+
+        <!-- REPLACE WITH ACTUAL KAYAL CRUISE IMAGE -->
+
+    <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Houseboat_on_Alleppey_backwaters_%28Kerala%2C_India_2023%29_%2852704809623%29.jpg"
+     alt="Alappuzha Backwaters Houseboat">
+
+    </div>
+
+    <div class="hero-overlay"></div>
+
+
+    <div class="hero-container">
+
+        <div class="hero-content">
+
+            <div class="hero-eyebrow">
+                HOUSEBOAT CRUISES IN KERALA
+            </div>
+
+
+            <h1>
+                Experience Kerala
+                <span>on the water.</span>
+            </h1>
+
+
+            <p class="hero-description">
+
+                Cruise through the serene backwaters of Alleppey and
+                Kumarakom aboard a traditional-inspired Kerala houseboat,
+                where timeless village life meets modern comfort.
+
+            </p>
+
+
+            <div class="hero-buttons">
 
                 <a
                     href="#cruises"
-                    class="book-btn"
-                >
+                    class="btn-primary">
+
                     Explore Cruises
+
+                    <span>↗</span>
+
+                </a>
+
+
+                <!-- REPLACE WHATSAPP NUMBER -->
+
+                <a
+                    href="https://wa.me/919999999999?text=Hello%20Kayal%20Cruise,%20I%20would%20like%20to%20know%20more%20about%20your%20houseboat%20cruises."
+                    target="_blank"
+                    class="btn-secondary">
+
+                    Plan Your Journey ↗
+
                 </a>
 
             </div>
 
+        </div>
 
-            <!-- MOBILE MENU BUTTON -->
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     STORY
+========================================= -->
+
+<section class="section" id="story">
+
+    <div class="container">
+
+        <div class="story-grid">
+
+
+            <div class="story-sticky">
+
+                <div class="eyebrow">
+                    THE STORY
+                </div>
+
+                <h2 class="story-title">
+                    Discover the story behind Kerala's houseboats.
+                </h2>
+
+            </div>
+
+
+            <div class="story-content">
+
+                <p>
+                    The backwaters of Kerala are more than a beautiful
+                    destination—they are a living part of Alleppey's history
+                    and culture.
+                </p>
+
+                <p>
+                    Among the most iconic symbols of this unique landscape
+                    is the Kettuvallam, the traditional boat that gradually
+                    transformed from a humble cargo vessel into the elegant
+                    houseboats Kerala is famous for today.
+                </p>
+
+
+                <h3 class="story-subtitle">
+                    The Beginning — The Era of Kettuvallam
+                </h3>
+
+                <p>
+                    Traditional Kettuvallams were large wooden boats primarily
+                    used to transport rice, coconut, spices and other
+                    agricultural goods through Kerala's extensive network
+                    of canals, rivers and backwaters.
+                </p>
+
+                <p>
+                    Constructed using wooden planks and traditional
+                    techniques, these boats were designed without nails
+                    in many parts of their construction.
+                </p>
+
+                <p>
+                    Coir ropes and natural materials were traditionally
+                    used to join and secure the wooden structure—giving
+                    the Kettuvallam its name, commonly understood as a
+                    "tied boat."
+                </p>
+
+                <p>
+                    For generations, these boats were an essential part
+                    of everyday life in the backwater villages.
+                </p>
+
+
+                <h3 class="story-subtitle">
+                    From Kettuvallam to Houseboats
+                </h3>
+
+                <p>
+                    As roads and modern transportation developed, the
+                    traditional cargo Kettuvallam gradually became less
+                    important for commercial transportation.
+                </p>
+
+                <p>
+                    But the story of the Kettuvallam did not end there.
+                </p>
+
+                <p>
+                    The unique structure, spacious design and connection
+                    with the waterways inspired a completely new concept—
+                    the Kerala houseboat.
+                </p>
+
+                <p>
+                    Kettuvallam began to be redesigned to accommodate
+                    people instead of goods. Simple sleeping areas,
+                    kitchens and basic facilities were introduced,
+                    allowing visitors to spend a night surrounded by
+                    the peaceful backwaters.
+                </p>
+
+
+                <div class="quote-box">
+
+                    "The backwaters, the villages and the timeless
+                    rhythm of Kerala life."
+
+                </div>
+
+
+                <h3 class="story-subtitle">
+                    Kerala's Houseboats Today
+                </h3>
+
+                <p>
+                    Today, houseboats range from traditional-style boats
+                    to premium floating accommodations with
+                    air-conditioned bedrooms, private bathrooms,
+                    elegant interiors, dining areas and modern amenities.
+                </p>
+
+                <p>
+                    Yet the heart of the experience remains unchanged:
+                    the backwaters, the villages and the timeless rhythm
+                    of Kerala life.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     DESTINATIONS
+========================================= -->
+
+<section class="section section-dark" id="destinations">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="eyebrow">
+                TWO GREAT GATEWAYS
+            </div>
+
+            <h2 class="section-title">
+                Alleppey & Kumarakom
+            </h2>
+
+            <p class="section-description">
+                While Alleppey is famous for its extensive network of
+                canals and waterways, Kumarakom offers a different
+                backwater experience around the scenic Vembanad Lake.
+            </p>
+
+        </div>
+
+
+        <div class="destination-grid">
+
+
+            <!-- ALLEPPEY -->
+
+            <article class="destination-card">
+
+               <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/House_Boat_Alappuzha.jpg"
+     alt="Alappuzha Houseboat">
+
+                <div class="destination-overlay"></div>
+
+                <div class="destination-content">
+
+                    <small>ALAPPUZHA</small>
+
+                    <h3>Alleppey</h3>
+
+                    <p>
+                        Famous for its intricate network of canals,
+                        lagoons and lakes. Cruise through paddy fields,
+                        coconut groves, small villages and traditional
+                        waterways.
+                    </p>
+
+                    <div class="destination-list">
+
+                        <span>Backwaters</span>
+                        <span>Narrow Canals</span>
+                        <span>Paddy Fields</span>
+                        <span>Village Life</span>
+                        <span>Longer Cruises</span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- KUMARAKOM -->
+
+            <article class="destination-card">
+
+                <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/KumarakomHouseBoat.jpg"
+     alt="Kumarakom Backwaters">
+
+                <div class="destination-overlay"></div>
+
+                <div class="destination-content">
+
+                    <small>VEMBANAD LAKE</small>
+
+                    <h3>Kumarakom</h3>
+
+                    <p>
+                        Experience beautiful lake views, birdlife,
+                        nature, peaceful surroundings and scenic
+                        village landscapes.
+                    </p>
+
+                    <div class="destination-list">
+
+                        <span>Vembanad Lake</span>
+                        <span>Lake Views</span>
+                        <span>Birdlife</span>
+                        <span>Nature</span>
+                        <span>Peaceful Cruise</span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     ALLEPPEY EXPERIENCES
+========================================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="eyebrow">
+                ALLEPPEY
+            </div>
+
+            <h2 class="section-title">
+                Things to experience
+            </h2>
+
+            <p class="section-description">
+                Alleppey offers travellers an opportunity to experience
+                Kerala from an entirely different perspective.
+                Here, roads give way to waterways and everyday life
+                unfolds along the banks.
+            </p>
+
+        </div>
+
+
+        <div class="fleet-grid">
+
+
+            <div class="fleet-card">
+
+                <div class="fleet-icon">🌴</div>
+
+                <small>01</small>
+
+                <h3>Alleppy's Backwaters</h3>
+
+                <p>
+                    Cruise through peaceful waterways surrounded by
+                    coconut palms, paddy fields and traditional villages.
+                </p>
+
+            </div>
+
+
+            <div class="fleet-card">
+
+                <div class="fleet-icon">🚣</div>
+
+                <small>02</small>
+
+                <h3>Traditional Village Life</h3>
+
+                <p>
+                    Watch fishermen at work, children travelling to school
+                    by boat and villagers working along the waterways.
+                </p>
+
+            </div>
+
+
+            <div class="fleet-card">
+
+                <div class="fleet-icon">⛪</div>
+
+                <small>03</small>
+
+                <h3>Historic Churches</h3>
+
+                <p>
+                    Discover beautiful churches and Christian heritage
+                    that form an important part of Alleppey's cultural
+                    landscape.
+                </p>
+
+            </div>
+
+
+            <div class="fleet-card">
+
+                <div class="fleet-icon">🛕</div>
+
+                <small>04</small>
+
+                <h3>Temples</h3>
+
+                <p>
+                    Experience Kerala's rich traditions, architecture
+                    and festivals through its historic temples.
+                </p>
+
+            </div>
+
+
+            <div class="fleet-card">
+
+                <div class="fleet-icon">🏁</div>
+
+                <small>05</small>
+
+                <h3>The Famous Snake Boat Race</h3>
+
+                <p>
+                    Vallam Kali is one of Kerala's spectacular cultural
+                    events. The famous Nehru Trophy Boat Race is held
+                    annually on Punnamada Lake.
+                </p>
+
+            </div>
+
+
+            <div class="fleet-card">
+
+                <div class="fleet-icon">🌊</div>
+
+                <small>06</small>
+
+                <h3>Alleppey Beach</h3>
+
+                <p>
+                    Enjoy the beautiful coastline, historic pier and
+                    Arabian Sea views at Alleppey Beach.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     KAYAL EXPERIENCE
+========================================= -->
+
+<section class="section section-dark">
+
+    <div class="container">
+
+        <div class="experience-grid">
+
+
+            <div class="experience-text">
+
+                <div class="eyebrow">
+                    THE KAYAL CRUISE EXPERIENCE
+                </div>
+
+                <h2 class="section-title">
+                    More than simply staying on a boat.
+                </h2>
+
+                <p style="margin-top:25px;">
+                    At Kayal Cruise, we believe a houseboat journey should
+                    be more than simply staying on a boat.
+                </p>
+
+                <p>
+                    It should be an experience. From the moment you arrive,
+                    our team focuses on making your journey comfortable,
+                    enjoyable and memorable.
+                </p>
+
+
+                <div class="offer-list">
+
+                    <div class="offer-item">
+                        Overnight houseboat cruises
+                    </div>
+
+                    <div class="offer-item">
+                        Day cruises
+                    </div>
+
+                    <div class="offer-item">
+                        Alleppey houseboats
+                    </div>
+
+                    <div class="offer-item">
+                        Kumarakom houseboats
+                    </div>
+
+                    <div class="offer-item">
+                        Traditional Kerala cuisine
+                    </div>
+
+                    <div class="offer-item">
+                        Comfortable accommodation
+                    </div>
+
+                    <div class="offer-item">
+                        Scenic backwater cruising
+                    </div>
+
+                    <div class="offer-item">
+                        Village and nature views
+                    </div>
+
+                    <div class="offer-item">
+                        Professional service
+                    </div>
+
+                    <div class="offer-item">
+                        Carefully planned cruise timings
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <div class="eyebrow">
+                    WHY CHOOSE US
+                </div>
+
+                <div class="why-grid">
+
+
+                    <div class="why-card">
+
+                        <span class="why-number">01</span>
+
+                        <h3>
+                            Authentic Kerala Experience
+                        </h3>
+
+                        <p>
+                            Experience the backwaters, villages and culture
+                            that make Kerala unique.
+                        </p>
+
+                    </div>
+
+
+                    <div class="why-card">
+
+                        <span class="why-number">02</span>
+
+                        <h3>
+                            Carefully Selected Houseboats
+                        </h3>
+
+                        <p>
+                            Choose from comfortable houseboats suitable
+                            for couples, families and groups.
+                        </p>
+
+                    </div>
+
+
+                    <div class="why-card">
+
+                        <span class="why-number">03</span>
+
+                        <h3>
+                            Timely & Smooth Operations
+                        </h3>
+
+                        <p>
+                            Guests are requested to arrive 15 minutes before
+                            scheduled check-in to maintain the cruise schedule.
+                        </p>
+
+                    </div>
+
+
+                    <div class="why-card">
+
+                        <span class="why-number">04</span>
+
+                        <h3>
+                            Traditional Food
+                        </h3>
+
+                        <p>
+                            Enjoy freshly prepared Kerala-style meals
+                            during your cruise.
+                        </p>
+
+                    </div>
+
+
+                    <div class="why-card">
+
+                        <span class="why-number">05</span>
+
+                        <h3>
+                            Alleppey & Kumarakom
+                        </h3>
+
+                        <p>
+                            Choose the backwater destination that best
+                            suits your travel plan.
+                        </p>
+
+                    </div>
+
+
+                    <div class="why-card">
+
+                        <span class="why-number">06</span>
+
+                        <h3>
+                            Hospitality That Feels Personal
+                        </h3>
+
+                        <p>
+                            Our goal is to make your time on the backwaters
+                            comfortable, relaxing and memorable.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     FLEET
+========================================= -->
+
+<section class="section" id="fleet">
+
+    <div class="container">
+
+        <div class="fleet-intro">
+
+            <div>
+
+                <div class="eyebrow">
+                    OUR HOUSEBOAT FLEET
+                </div>
+
+                <h2 class="section-title">
+                    Your journey deserves the right houseboat.
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <p class="section-description" style="margin-bottom:45px;">
+            Explore our collection of houseboats designed for different
+            types of travellers—from couples seeking a private escape
+            to families and groups looking for a comfortable backwater
+            holiday.
+        </p>
+
+
+        <div class="fleet-grid">
+
+
+            <div class="fleet-card">
+
+                <div class="fleet-icon">🚤</div>
+
+                <small>HOUSEBOAT CATEGORY</small>
+
+                <h3>1 Bedroom Houseboats</h3>
+
+                <p>
+                    Comfortable houseboats designed for couples and
+                    smaller private stays.
+                </p>
+
+                 <!-- 1 Bedroom -->
+<a href="#" onclick="enquireFleet('1 Bedroom Houseboat'); return false;">
+    Enquire Now →
+</a>
+
+            </div>
+
+
+            <div class="fleet-card">
+
+                <div class="fleet-icon">🚤</div>
+
+                <small>HOUSEBOAT CATEGORY</small>
+
+                <h3>2 Bedroom Houseboats</h3>
+
+                <p>
+                    A comfortable option for families and small groups.
+                </p>
+
+                 <!-- 2 Bedroom -->
+<a href="#" onclick="enquireFleet('2 Bedroom Houseboat'); return false;">
+    Enquire Now →
+</a>
+
+            </div>
+
+
+            <div class="fleet-card">
+
+                <div class="fleet-icon">🚤</div>
+
+                <small>HOUSEBOAT CATEGORY</small>
+
+                <h3>3 Bedroom Houseboats</h3>
+
+                <p>
+                    Spacious accommodation suitable for larger families
+                    and groups.
+                </p>
+
+                 <a href="#" onclick="enquireFleet('3 Bedroom Houseboat'); return false;">
+    Enquire Now →
+</a>
+
+            </div>
+
+
+            <div class="fleet-card">
+
+                <div class="fleet-icon">✨</div>
+
+                <small>HOUSEBOAT CATEGORY</small>
+
+                <h3>Premium Houseboats</h3>
+
+                <p>
+                    Premium floating accommodation for guests looking
+                    for enhanced comfort.
+                </p>
+
+                 <a href="#" onclick="enquireFleet('Premium Houseboat'); return false;">
+    Enquire Now →
+</a>
+
+            </div>
+
+
+            <div class="fleet-card">
+
+                <div class="fleet-icon">⭐</div>
+
+                <small>HOUSEBOAT CATEGORY</small>
+
+                <h3>Luxury Houseboats</h3>
+
+                <p>
+                    Elegant houseboat experiences combining Kerala's
+                    traditional character with modern comfort.
+                </p>
+
+                 <a href="#" onclick="enquireFleet('Luxury Houseboat'); return false;">
+    Enquire Now →
+</a>
+
+            </div>
+
+
+            <div class="fleet-card">
+
+                <div class="fleet-icon">👨‍👩‍👧‍👦</div>
+
+                <small>HOUSEBOAT CATEGORY</small>
+
+                <h3>Group Houseboats</h3>
+
+                <p>
+                    Houseboat options designed for groups looking for
+                    a memorable backwater journey together.
+                </p>
+
+                 <a href="#" onclick="enquireFleet('Group Houseboat'); return false;">
+    Enquire Now →
+</a>
+
+            </div>
+
+        </div>
+
+
+        <p style="
+            margin-top:30px;
+            color:#7a817e;
+            font-size:12px;
+            line-height:1.7;
+        ">
+            * Actual boat names, room details, facilities, cruise routes
+            and photographs can be added once provided by Kayal Cruise.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     CRUISES
+========================================= -->
+
+<section class="section section-dark" id="cruises">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="eyebrow">
+                CRUISE DETAILS
+            </div>
+
+            <h2 class="section-title">
+                Choose your way to experience the backwaters.
+            </h2>
+
+        </div>
+
+
+        <div class="cruise-tabs">
+
             <button
-                class="menu-toggle"
-                id="menuToggle"
-                aria-label="Open menu"
-                aria-expanded="false"
-            >
+                class="cruise-tab active"
+                data-tab="overnight">
 
-                <span></span>
-                <span></span>
-                <span></span>
+                Overnight Cruise
+
+            </button>
+
+
+            <button
+                class="cruise-tab"
+                data-tab="day">
+
+                Day Cruise
 
             </button>
 
         </div>
 
 
-        <!-- =========================================
-             MOBILE MENU
-        ========================================== -->
+        <!-- OVERNIGHT -->
 
-        <div class="mobile-menu" id="mobileMenu">
+        <div
+            class="cruise-panel active"
+            id="overnight">
 
-            <div class="mobile-menu-inner">
+            <div class="cruise-header">
 
-                <a
-                    href="/"
-                    class="mobile-link active"
-                >
-                    <span>01</span>
+                <div>
+
+                    <h3>
+                        Overnight Houseboat Cruise
+                    </h3>
+
+                    <p style="margin-top:15px;">
+                        A complete backwater experience with an overnight stay.
+                    </p>
+
+                </div>
+
+
+                <div class="time-cards">
+
+                    <div class="time-card">
+
+                        <span>CHECK-IN</span>
+
+                        <strong>
+                            12:00 PM
+                        </strong>
+
+                    </div>
+
+
+                    <div class="time-card">
+
+                        <span>CHECK-OUT</span>
+
+                        <strong>
+                            9:00 AM Next Day
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline">
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-time">
+                        11:45 AM
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <strong>Arrival</strong>
+
+                        Arrive at the boarding point and complete
+                        the check-in formalities.
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-time">
+                        12:00 PM
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <strong>Cruise Begins</strong>
+
+                        Welcome aboard Kayal Cruise with a refreshing
+                        welcome drink before beginning your journey.
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-time">
+                        12:30 PM
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <strong>Lunch</strong>
+
+                        Freshly prepared Kerala-style lunch featuring
+                        two non-vegetarian dishes and accompanying
+                        menu items.
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-time">
+                        Afternoon
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <strong>Backwater Cruising</strong>
+
+                        Relax while the houseboat passes through scenic
+                        backwaters, villages, paddy fields and
+                        coconut-lined waterways.
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-time">
+                        5–5:30 PM
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <strong>Evening Halt</strong>
+
+                        The houseboat anchors at a suitable riverside
+                        location. Relax, enjoy the sunset and experience
+                        the peaceful atmosphere of the backwaters.
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-time">
+                        Evening
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <strong>Refreshment</strong>
+
+                        Enjoy your evening refreshment while relaxing
+                        on board.
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-time">
+                        Night
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <strong>Dinner</strong>
+
+                        Dinner will be served on the houseboat.
+                        Enjoy a peaceful night surrounded by the
+                        sounds of the backwaters.
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-time">
+                        8–9 AM
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <strong>Morning Cruise & Breakfast</strong>
+
+                        Wake up to the beauty of Kerala's backwaters.
+                        Enjoy approximately one hour of morning cruising,
+                        accompanied by breakfast.
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-time">
+                        9:00 AM
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <strong>Check-out</strong>
+
+                        The overnight houseboat experience concludes
+                        at 9:00 AM.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- DAY -->
+
+        <div
+            class="cruise-panel"
+            id="day">
+
+            <div class="cruise-header">
+
+                <div>
+
+                    <h3>
+                        Day Cruise
+                    </h3>
+
+                    <p style="margin-top:15px;">
+                        Experience the backwaters in a day.
+                    </p>
+
+                </div>
+
+
+                <div class="time-cards">
+
+                    <div class="time-card">
+
+                        <span>ARRIVAL</span>
+
+                        <strong>
+                            11:15 AM
+                        </strong>
+
+                    </div>
+
+
+                    <div class="time-card">
+
+                        <span>CRUISE</span>
+
+                        <strong>
+                            11:30 AM – 4:30 PM
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline">
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-time">
+                        11:15 AM
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <strong>Arrival & Check-in</strong>
+
+                        Complete the check-in formalities and get ready
+                        for your cruise.
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-time">
+                        11:30 AM
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <strong>Cruise Begins</strong>
+
+                        Welcome aboard with a refreshing welcome drink.
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-time">
+                        Afternoon
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <strong>Backwater Cruise</strong>
+
+                        Cruise through the beautiful waterways of
+                        Alleppey/Kumarakom while enjoying views of
+                        villages, paddy fields and coconut palms.
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-time">
+                        Lunch
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <strong>Kerala-style Lunch</strong>
+
+                        Enjoy a freshly prepared Kerala-style lunch
+                        on board.
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-time">
+                        Evening
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <strong>Refreshment</strong>
+
+                        Before the cruise concludes, enjoy a light
+                        evening refreshment.
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-time">
+                        4:30 PM
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <strong>Cruise Ends</strong>
+
+                        Return to the designated boarding point and
+                        conclude your day cruise.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="early-note">
+
+            <strong>
+                Important: Arrive 15 Minutes Early
+            </strong>
+
+            <p>
+                To ensure a smooth experience for every guest,
+                please arrive 15 minutes before the scheduled
+                check-in time.
+            </p>
+
+            <p>
+                Overnight Cruise: 11:45 AM arrival → 12:00 PM departure
+                <br>
+                Day Cruise: 11:15 AM arrival → 11:30 AM departure
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     FOOD
+========================================= -->
+
+<section class="section" id="food">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="eyebrow">
+                FOOD MENU
+            </div>
+
+            <h2 class="section-title">
+                A Taste of Kerala on the Backwaters
+            </h2>
+
+            <p class="section-description">
+                Food is an important part of the Kayal Cruise experience.
+                Our meals are prepared to give guests a taste of
+                traditional Kerala cuisine while enjoying the beauty
+                of the backwaters.
+            </p>
+
+        </div>
+
+
+        <div class="food-grid">
+
+
+            <div class="food-card">
+
+                <h3>Welcome Drink</h3>
+
+                <ul>
+
+                    <li>
+                        Tender coconut / seasonal welcome drink
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="food-card">
+
+                <h3>Lunch</h3>
+
+                <ul>
+
+                    <li>Rice</li>
+
+                    <li>Fish curry</li>
+
+                    <li>Chicken / other non-vegetarian preparation</li>
+
+                    <li>Vegetable side dishes</li>
+
+                    <li>Thoran</li>
+
+                    <li>Pickle</li>
+
+                    <li>Papad</li>
+
+                    <li>Salad</li>
+
+                    <li>Dessert</li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="food-card">
+
+                <h3>Evening Refreshment</h3>
+
+                <ul>
+
+                    <li>Tea / Coffee</li>
+
+                    <li>Light snacks</li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="food-card">
+
+                <h3>Dinner</h3>
+
+                <ul>
+
+                    <li>Rice / Chapati</li>
+
+                    <li>Curry</li>
+
+                    <li>Non-vegetarian preparation</li>
+
+                    <li>Vegetable side dishes</li>
+
+                    <li>Thoran</li>
+
+                    <li>Pickle</li>
+
+                    <li>Papad</li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="food-card">
+
+                <h3>Breakfast</h3>
+
+                <ul>
+
+                    <li>Kerala-style breakfast</li>
+
+                    <li>Tea / Coffee</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <p class="food-note">
+            Note: The exact menu may vary depending on the package
+            and seasonal availability.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     CONTACT
+========================================= -->
+
+<section class="section section-dark" id="contact">
+
+    <div class="container">
+
+        <div class="contact-grid">
+
+
+            <div class="contact-info">
+
+                <div class="eyebrow">
+                    CONTACT KAYAL CRUISE
+                </div>
+
+                <h2 class="section-title">
+                    Plan Your Backwater Journey
+                </h2>
+
+                <p>
+                    Ready to experience Kerala from the water?
+                    Whether you are planning a romantic getaway,
+                    family holiday, group trip or a relaxing day
+                    on the backwaters, our team will help you choose
+                    the right houseboat and cruise option.
+                </p>
+
+
+                <div class="contact-details">
+
+
+                    <div class="contact-detail">
+
+                        <small>
+                            Office
+                        </small>
+
+                        <span>
+                            [Office Address]
+                        </span>
+
+                    </div>
+
+
+                    <div class="contact-detail">
+
+                        <small>
+                            Phone
+                        </small>
+
+                        <span>
+                            [Phone Number]
+                        </span>
+
+                    </div>
+
+
+                    <div class="contact-detail">
+
+                        <small>
+                            WhatsApp
+                        </small>
+
+                        <span>
+                            [WhatsApp Number]
+                        </span>
+
+                    </div>
+
+
+                    <div class="contact-detail">
+
+                        <small>
+                            Email
+                        </small>
+
+                        <span>
+                            [Email Address]
+                        </span>
+
+                    </div>
+
+
+                    <div class="contact-detail">
+
+                        <small>
+                            Boarding Points
+                        </small>
+
+                        <span>
+                            Alleppey | Kumarakom
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- INQUIRY FORM -->
+
+            <form class="inquiry-form" id="inquiryForm">
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Your name"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Phone / WhatsApp
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Your phone number"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Your email">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Travel Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="date"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Number of Guests
+                        </label>
+
+                        <input
+                            type="number"
+                            id="guests"
+                            min="1"
+                            placeholder="Guests"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Bedrooms Required
+                        </label>
+
+                        <select id="bedrooms">
+
+                            <option value="">
+                                Select
+                            </option>
+
+                            <option>
+                                1 Bedroom
+                            </option>
+
+                            <option>
+                                2 Bedrooms
+                            </option>
+
+                            <option>
+                                3 Bedrooms
+                            </option>
+
+                            <option>
+                                More / Group
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Cruise Type
+                        </label>
+
+                        <select id="cruiseType">
+
+                            <option>
+                                Overnight
+                            </option>
+
+                            <option>
+                                Day Cruise
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Preferred Location
+                        </label>
+
+                        <select id="location">
+
+                            <option>
+                                Alleppey
+                            </option>
+
+                            <option>
+                                Kumarakom
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label>
+                            Special Requirements
+                        </label>
+
+                        <textarea
+                            id="requirements"
+                            placeholder="Tell us anything we should know..."></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="form-submit">
+
+                    Send Inquiry on WhatsApp ↗
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+
+            <div class="footer-brand">
+
+                <strong>KAYAL CRUISE</strong>
+
+                <p>
+                    Houseboat Cruises in Alleppey & Kumarakom.
+                    Experience Kerala on the water.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Explore</h4>
+
+                <a href="#home">
                     Home
                 </a>
 
-                <a
-                    href="#packages"
-                    class="mobile-link"
-                >
-                    <span>02</span>
-                    Cruises
+                <a href="#story">
+                    Our Story
                 </a>
 
-                <a
-                    href="#gallery"
-                    class="mobile-link"
-                >
-                    <span>03</span>
-                    Gallery
+                <a href="#destinations">
+                    Destinations
                 </a>
 
-
-                <div class="mobile-divider"></div>
-
-
-                <a
-                    href="#cruises"
-                    class="mobile-explore"
-                >
-                    <span>Explore Our Cruises</span>
-                    <span>→</span>
+                <a href="#fleet">
+                    Our Fleet
                 </a>
 
+            </div>
 
-                <a
-                    href="https://wa.me/919995068622"
-                    target="_blank"
-                    class="mobile-whatsapp"
-                >
-                    <span>Chat on WhatsApp</span>
-                    <span>↗</span>
+
+            <div class="footer-column">
+
+                <h4>Journey</h4>
+
+                <a href="#cruises">
+                    Overnight Cruise
+                </a>
+
+                <a href="#cruises">
+                    Day Cruise
+                </a>
+
+                <a href="#food">
+                    Food
+                </a>
+
+                <a href="#contact">
+                    Contact
                 </a>
 
             </div>
 
         </div>
 
-    </header>
 
-
-
-
-<!-- =========================================
-     HERO SECTION
-========================================= -->
-
-<section class="hero" id="home">
-
-    <!-- Background Image -->
-    <div class="hero-bg">
-        <img
-            src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80"
-            alt="Luxury cruise sailing through Kerala backwaters"
-        >
-    </div>
-
-    <!-- Dark / Warm Overlay -->
-    <div class="hero-overlay"></div>
-
-
-    <!-- Decorative Glow -->
-    <div class="hero-glow hero-glow-one"></div>
-    <div class="hero-glow hero-glow-two"></div>
-
-
-    <div class="hero-container">
-
-        <!-- =====================================
-             HERO CONTENT
-        ====================================== -->
-
-        <div class="hero-content">
-
-            <div class="hero-eyebrow">
-                <span class="eyebrow-line"></span>
-                <span>EXPERIENCE THE EXTRAORDINARY</span>
-            </div>
-
-
-            <h1>
-                Sail Beyond
-                <span>Ordinary.</span>
-            </h1>
-
-
-            <p class="hero-description">
-                Discover unforgettable journeys across Kerala's
-                beautiful backwaters aboard our thoughtfully
-                designed luxury cruises.
-            </p>
-
-
-            <!-- HERO BUTTONS -->
-
-            <div class="hero-buttons">
-
-                <a
-                    href="#cruises"
-                    class="hero-primary-btn"
-                >
-                    <span>Explore Cruises</span>
-                    <span class="btn-arrow">↗</span>
-                </a>
-
-
-                <a
-                    href="https://wa.me/919995068622?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20your%20cruises."
-                    target="_blank"
-                    class="hero-secondary-btn"
-                >
-                    <span class="play-icon">◉</span>
-                    <span>Plan Your Journey</span>
-                </a>
-
-            </div>
-
-
-            <!-- HERO TRUST -->
-
-            <div class="hero-trust">
-
-                <div class="trust-item">
-                    <strong>4+</strong>
-                    <span>Cruise Experiences</span>
-                </div>
-
-                <div class="trust-divider"></div>
-
-                <div class="trust-item">
-                    <strong>16</strong>
-                    <span>Luxury Options</span>
-                </div>
-
-                <div class="trust-divider"></div>
-
-                <div class="trust-item">
-                    <strong>24/7</strong>
-                    <span>Guest Support</span>
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- =====================================
-             FLOATING CRUISE CARD
-        ====================================== -->
-
-        <div class="hero-cruise-card">
-
-            <div class="card-top">
-
-                <span class="card-label">
-                    FEATURED EXPERIENCE
-                </span>
-
-                <span class="card-status">
-                    ● Available
-                </span>
-
-            </div>
-
-
-            <div class="card-image">
-
-                <img
-                    src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80"
-                    alt="Luxury overnight cruise"
-                >
-
-                <div class="image-gradient"></div>
-
-                <div class="card-image-text">
-                    <small>OVERNIGHT EXPERIENCE</small>
-                    <strong>Luxury Backwater Escape</strong>
-                </div>
-
-            </div>
-
-
-            <div class="card-info">
-
-                <div>
-                    <span>Duration</span>
-                    <strong>2 Days / 1 Night</strong>
-                </div>
-
-                <div>
-                    <span>Starting From</span>
-                    <strong>₹12,500</strong>
-                </div>
-
-            </div>
-
-
-            <a
-                href="services.html"
-                class="card-link"
-            >
-                View Experience
-                <span>→</span>
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <!-- =====================================
-         SCROLL INDICATOR
-    ====================================== -->
-
-    <div class="hero-scroll">
-
-        <span class="scroll-line"></span>
-
-        <span>SCROLL TO EXPLORE</span>
-
-    </div>
-
-
-    <!-- =====================================
-         HERO BOTTOM LOCATION
-    ====================================== -->
-
-    <div class="hero-location">
-
-        <span class="location-dot"></span>
-
-        <span>KERALA · INDIA</span>
-
-    </div>
-
-</section>
-
-
-
-
-
-
-
-
-
-
-
-<!-- CRUISE EXPERIENCES -->
-<section class="cruise-section" id="cruises">
-    <div class="cruise-container">
-
-        <div class="cruise-heading">
-            <div class="section-label">
-                <span></span> OUR EXPERIENCES
-            </div>
-
-            <h2>Choose Your Way<br><em>to Sail.</em></h2>
-
-            <p>
-                From a relaxing day on the backwaters to an
-                unforgettable overnight escape, choose the
-                experience that suits your journey.
-            </p>
-        </div>
-
-        <div class="cruise-grid">
-
-            <!-- OVERNIGHT -->
-            <a href="services.html#overnight" class="cruise-card cruise-large">
-                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80" alt="Overnight Cruise">
-
-                <div class="cruise-card-overlay"></div>
-
-                <div class="cruise-card-content">
-                    <span>01 · OVERNIGHT</span>
-                    <h3>Overnight<br>Escape</h3>
-                    <p>Slow down, unwind and wake up surrounded by Kerala's backwaters.</p>
-                   
-                </div>
-            </a>
-
-            <!-- DAY CRUISE -->
-            <a href="services.html#day-cruise" class="cruise-card">
-                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80" alt="Day Cruise">
-
-                <div class="cruise-card-overlay"></div>
-
-                <div class="cruise-card-content">
-                    <span>02 · DAY CRUISE</span>
-                    <h3>A Day<br>on Water</h3>
-                    <p>A beautiful escape designed around your day.</p>
-                   
-                </div>
-            </a>
-
-            <!-- TRADITIONAL -->
-            <a href="services.html#traditional" class="cruise-card">
-                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80" alt="Traditional Cruise">
-
-                <div class="cruise-card-overlay"></div>
-
-                <div class="cruise-card-content">
-                    <span>03 · TRADITIONAL</span>
-                    <h3>Kerala's<br>Tradition</h3>
-                    <p>Experience the charm and heritage of traditional cruising.</p>
-                   
-                </div>
-            </a>
-
-           
-
-        </div>
-
-        
-
-    </div>
-</section>
-
-
-
-<!-- WHY CHOOSE US -->
-<section class="why-section">
-    <div class="why-container">
-
-        <div class="why-image">
-            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80" alt="Luxury cruise dining experience">
-
-            <div class="why-image-caption">
-                <span>THE ART OF SLOW TRAVEL</span>
-                <strong>Designed for moments<br>worth remembering.</strong>
-            </div>
-        </div>
-
-        <div class="why-content">
-
-            <div class="section-label">
-                <span></span> WHY CHOOSE US
-            </div>
-
-            <h2>
-                More Than a Cruise.<br>
-                <em>A Complete Experience.</em>
-            </h2>
-
-            <p class="why-intro">
-                Every detail of your journey is thoughtfully planned,
-                from the moment you step aboard to the moment you leave.
-            </p>
-
-            <div class="why-list">
-
-                <div class="why-item">
-                    <div class="why-number">01</div>
-                    <div>
-                        <h3>Beautifully Curated</h3>
-                        <p>
-                            Carefully designed routes and experiences
-                            that let you discover Kerala at its finest.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="why-item">
-                    <div class="why-number">02</div>
-                    <div>
-                        <h3>Exceptional Hospitality</h3>
-                        <p>
-                            Warm, attentive service that makes every
-                            moment onboard feel effortless.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="why-item">
-                    <div class="why-number">03</div>
-                    <div>
-                        <h3>Authentic Flavours</h3>
-                        <p>
-                            Freshly prepared menus bringing together
-                            local flavours and memorable dining.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="why-item">
-                    <div class="why-number">04</div>
-                    <div>
-                        <h3>Comfort Without Compromise</h3>
-                        <p>
-                            Thoughtful spaces, premium amenities and
-                            everything you need to truly unwind.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-</section>
-
-
-
-
-
-<!-- =========================================
-     FEATURED PACKAGES
-========================================= -->
-
-<section class="packages-section" id="packages">
-
-    <div class="packages-container">
-
-        <!-- SECTION HEADER -->
-        <div class="packages-heading">
-
-            <div>
-                <div class="section-label">
-                    <span></span> FEATURED PACKAGES
-                </div>
-
-                <h2>
-                    Find Your Perfect<br>
-                    <em>Way to Sail.</em>
-                </h2>
-            </div>
-
-            <p>
-                Choose the level of comfort that suits your journey.
-                Every package is created to make your time on the water
-                effortless and memorable.
-            </p>
-
-        </div>
-
-
-        <!-- PACKAGE CARDS -->
-        <div class="packages-grid">
-
-
-            <!-- =====================================
-                 PREMIUM
-            ====================================== -->
-
-            <article class="package-card">
-
-                <div class="package-image">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80"
-                        alt="Premium cruise"
-                    >
-
-                    <span class="package-tag">01</span>
-
-                </div>
-
-
-                <div class="package-content">
-
-                    <div class="package-top">
-                        <span>PREMIUM</span>
-                        <strong>From ₹8,500</strong>
-                    </div>
-
-                    <h3>Premium Escape</h3>
-
-                    <p>
-                        A comfortable and beautiful way to experience
-                        Kerala's backwaters.
-                    </p>
-
-
-                    <div class="package-meta">
-                        <span>1 Day</span>
-                        <span>•</span>
-                        <span>2 Guests</span>
-                    </div>
-
-
-                    <div class="package-actions">
-
-                        <button
-                            class="package-view"
-                            onclick="openPackage('premium')"
-                        >
-                            View Details <b>↗</b>
-                        </button>
-
-
-                        <a
-                            href="https://wa.me/919995068622?text=Hello%2C%20I%20am%20interested%20in%20the%20Premium%20Cruise."
-                            target="_blank"
-                            class="package-wa"
-                        >
-                            <i class="fa-brands fa-whatsapp"></i>
-                            WhatsApp
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- =====================================
-                 DELUXE
-            ====================================== -->
-
-            <article class="package-card featured-package">
-
-                <div class="popular-label">
-                    MOST POPULAR
-                </div>
-
-
-                <div class="package-image">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80"
-                        alt="Deluxe cruise"
-                    >
-
-                    <span class="package-tag">02</span>
-
-                </div>
-
-
-                <div class="package-content">
-
-                    <div class="package-top">
-                        <span>DELUXE</span>
-                        <strong>From ₹12,500</strong>
-                    </div>
-
-                    <h3>Deluxe Escape</h3>
-
-                    <p>
-                        Extra comfort, thoughtful details and a more
-                        refined cruise experience.
-                    </p>
-
-
-                    <div class="package-meta">
-                        <span>2 Days / 1 Night</span>
-                        <span>•</span>
-                        <span>2 Guests</span>
-                    </div>
-
-
-                    <div class="package-actions">
-
-                        <button
-                            class="package-view"
-                            onclick="openPackage('deluxe')"
-                        >
-                            View Details <b>↗</b>
-                        </button>
-
-
-                        <a
-                            href="https://wa.me/919995068622?text=Hello%2C%20I%20am%20interested%20in%20the%20Deluxe%20Cruise."
-                            target="_blank"
-                            class="package-wa"
-                        >
-                            <i class="fa-brands fa-whatsapp"></i>
-                            WhatsApp
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- =====================================
-                 LUXURY
-            ====================================== -->
-
-            <article class="package-card">
-
-                <div class="package-image">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80"
-                        alt="Luxury cruise"
-                    >
-
-                    <span class="package-tag">03</span>
-
-                </div>
-
-
-                <div class="package-content">
-
-                    <div class="package-top">
-                        <span>LUXURY</span>
-                        <strong>From ₹18,500</strong>
-                    </div>
-
-                    <h3>Luxury Escape</h3>
-
-                    <p>
-                        Elevated interiors, premium dining and a journey
-                        designed around complete relaxation.
-                    </p>
-
-
-                    <div class="package-meta">
-                        <span>2 Days / 1 Night</span>
-                        <span>•</span>
-                        <span>2 Guests</span>
-                    </div>
-
-
-                    <div class="package-actions">
-
-                        <button
-                            class="package-view"
-                            onclick="openPackage('luxury')"
-                        >
-                            View Details <b>↗</b>
-                        </button>
-
-
-                        <a
-                            href="https://wa.me/919995068622?text=Hello%2C%20I%20am%20interested%20in%20the%20Luxury%20Cruise."
-                            target="_blank"
-                            class="package-wa"
-                        >
-                            <i class="fa-brands fa-whatsapp"></i>
-                            WhatsApp
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- =====================================
-                 ULTRA LUXURY
-            ====================================== -->
-
-            <article class="package-card">
-
-                <div class="package-image">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80"
-                        alt="Ultra Luxury cruise"
-                    >
-
-                    <span class="package-tag">04</span>
-
-                </div>
-
-
-                <div class="package-content">
-
-                    <div class="package-top">
-                        <span>ULTRA LUXURY</span>
-                        <strong>From ₹28,500</strong>
-                    </div>
-
-                    <h3>Ultimate Escape</h3>
-
-                    <p>
-                        Our most exclusive experience with exceptional
-                        comfort, privacy and personalised service.
-                    </p>
-
-
-                    <div class="package-meta">
-                        <span>2 Days / 1 Night</span>
-                        <span>•</span>
-                        <span>2 Guests</span>
-                    </div>
-
-
-                    <div class="package-actions">
-
-                        <button
-                            class="package-view"
-                            onclick="openPackage('ultra')"
-                        >
-                            View Details <b>↗</b>
-                        </button>
-
-
-                        <a
-                            href="https://wa.me/919995068622?text=Hello%2C%20I%20am%20interested%20in%20the%20Ultra%20Luxury%20Cruise."
-                            target="_blank"
-                            class="package-wa"
-                        >
-                            <i class="fa-brands fa-whatsapp"></i>
-                            WhatsApp
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-        </div>
-
-
-        <!-- PACKAGE FOOTER -->
-
-        <div class="packages-footer">
+        <div class="footer-bottom">
 
             <span>
-                PREMIUM · DELUXE · LUXURY · ULTRA LUXURY
+                © 2026 Kayal Cruise. All Rights Reserved.
             </span>
 
-           
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================
-     PACKAGE DETAILS MODAL
-========================================= -->
-
-<div class="package-modal" id="packageModal">
-
-    <div
-        class="package-modal-backdrop"
-        onclick="closePackage()"
-    ></div>
-
-
-    <div class="package-modal-box">
-
-
-        <!-- CLOSE -->
-
-        <button
-            class="package-close"
-            onclick="closePackage()"
-            aria-label="Close"
-        >
-            ×
-        </button>
-
-
-        <!-- HEADER -->
-
-        <div class="modal-header">
-
-            <span id="modalCategory">
-                PREMIUM
+            <span>
+                Alleppey | Kumarakom
             </span>
 
-            <h2 id="modalTitle">
-                Premium Escape
-            </h2>
-
-            <p id="modalDescription"></p>
-
         </div>
-
-
-        <!-- BASIC INFO -->
-
-        <div class="modal-info">
-
-            <div>
-                <small>Duration</small>
-                <strong id="modalDuration"></strong>
-            </div>
-
-            <div>
-                <small>Guests</small>
-                <strong id="modalGuests"></strong>
-            </div>
-
-            <div>
-                <small>Starting From</small>
-                <strong id="modalPrice"></strong>
-            </div>
-
-        </div>
-
-
-        <!-- ITINERARY + FOOD -->
-
-        <div class="modal-content-grid">
-
-
-            <!-- ITINERARY -->
-
-            <div class="modal-column">
-
-                <div class="modal-title">
-
-                    <span>01</span>
-
-                    <h3>
-                        Itinerary
-                    </h3>
-
-                </div>
-
-                <div
-                    class="itinerary"
-                    id="modalItinerary"
-                ></div>
-
-            </div>
-
-
-            <!-- FOOD -->
-
-            <div class="modal-column">
-
-                <div class="modal-title">
-
-                    <span>02</span>
-
-                    <h3>
-                        Food & Dining
-                    </h3>
-
-                </div>
-
-                <div
-                    class="food-list"
-                    id="modalFood"
-                ></div>
-
-            </div>
-
-        </div>
-
-
-        <!-- INCLUDED -->
-
-        <div class="modal-included">
-
-            <div class="modal-title">
-
-                <span>03</span>
-
-                <h3>
-                    What's Included
-                </h3>
-
-            </div>
-
-            <div
-                class="included-list"
-                id="modalIncluded"
-            ></div>
-
-        </div>
-
-
-        <!-- MODAL FOOTER -->
-
-        <div class="modal-footer">
-
-            <div>
-
-                <small>
-                    Package Price
-                </small>
-
-                <strong id="modalFooterPrice">
-                </strong>
-
-            </div>
-
-
-            <a
-                href="wa.me/919995068622"
-                target="_blank"
-                id="modalWhatsapp"
-                class="modal-whatsapp"
-            >
-
-                <i class="fa-brands fa-whatsapp"></i>
-
-                Enquire on WhatsApp
-
-                <span>↗</span>
-
-            </a>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-
-<!-- TESTIMONIALS -->
-<section class="testimonials-section">
-
-    <div class="testimonials-container">
-
-        <div class="testimonials-header">
-            <div class="section-label">
-                <span></span> GUEST EXPERIENCES
-            </div>
-
-            <h2>
-                Stories From Our<br>
-                <em>Happy Guests.</em>
-            </h2>
-        </div>
-
-        <div class="testimonials-grid">
-
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-
-                <p>
-                    The overnight cruise was absolutely beautiful.
-                    The food, service and scenery exceeded our expectations.
-                </p>
-
-                <div class="guest">
-                    <strong>Arjun Nair</strong>
-                    <span>Kochi</span>
-                </div>
-            </div>
-
-            <div class="testimonial-card featured-testimonial">
-                <div class="stars">★★★★★</div>
-
-                <p>
-                    One of the best experiences during our Kerala trip.
-                    The staff were incredibly welcoming and professional.
-                </p>
-
-                <div class="guest">
-                    <strong>Sarah Thomas</strong>
-                    <span>Bengaluru</span>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-
-                <p>
-                    The luxury package was worth every rupee.
-                    Stunning views, excellent food and complete comfort.
-                </p>
-
-                <div class="guest">
-                    <strong>Rahul Menon</strong>
-                    <span>Chennai</span>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-</section>
-
-
-
-
-
-
-<!-- GALLERY PREVIEW -->
-<section class="gallery-preview">
-    <div class="gallery-container">
-
-        <div class="gallery-heading">
-            <div>
-                <div class="section-label">
-                    <span></span> GALLERY
-                </div>
-                <h2>A Glimpse of<br><em>Your Journey.</em></h2>
-            </div>
-
-            
-        </div>
-
-        <div class="gallery-grid">
-
-            <DIV class="gallery-item gallery-item-large">
-                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80" alt="Luxury cruise">
-                <div class="gallery-overlay">
-                    <span>01</span>
-                    <strong>Life on Water</strong>
-                </div>
-            </DIV>
-
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80" alt="Cruise interior">
-                <div class="gallery-overlay">
-                    <span>02</span>
-                    <strong>Refined Interiors</strong>
-                </div>
-            </DIV>
-
-            <DIV class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80" alt="Cruise dining">
-                <div class="gallery-overlay">
-                    <span>03</span>
-                    <strong>Dining Experiences</strong>
-                </div>
-            </DIV>
-
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80" alt="Kerala backwaters">
-                <div class="gallery-overlay">
-                    <span>04</span>
-                    <strong>Kerala Backwaters</strong>
-                </div>
-            </DIV>
-
-            
-
-        </div>
-
-    </div>
-</section>
-
-
-
-
-
-<!-- FOOTER -->
-<footer class="site-footer">
-
-    <div class="footer-main">
-
-        <div class="footer-brand">
-            <a href="index.html" class="footer-logo">
-                YOUR<span>CRUISE</span>
-            </a>
-
-            <p>
-                Beautiful journeys across Kerala's backwaters,
-                created for unforgettable moments.
-            </p>
-
-            <a
-                href="https://wa.me/919995068622?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20your%20cruises."
-                target="_blank"
-                class="footer-whatsapp"
-            >
-                Chat With Us <span>↗</span>
-            </a>
-        </div>
-
-
-        <div class="footer-column">
-            <h4>Explore</h4>
-
-            <a href="index.html">Home</a>
-            <a href="services.html">Cruises</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="#about">About Us</a>
-        </div>
-
-
-        <div class="footer-column">
-            <h4>Experiences</h4>
-
-            <a href="#overnight">Overnight</a>
-            <a href="#day-cruise">Day Cruise</a>
-            <a href="#traditional">Traditional</a>
-            <a href="#signature">Signature</a>
-        </div>
-
-
-        <div class="footer-column footer-contact">
-            <h4>Get In Touch</h4>
-
-            <a href="tel:919995068622">
-                +91 98765 43210
-            </a>
-
-            <a href="mailto:hello@yourcruise.com">
-                hello@yourcruise.com
-            </a>
-
-            <p>
-                Alappuzha, Kerala<br>
-                India
-            </p>
-        </div>
-
-    </div>
-
-
-    <div class="footer-bottom">
-
-        <span>
-            © 2026 Kaayal Cruise. All rights reserved.
-        </span>
-
-        <div class="footer-socials">
-            <a href="#" aria-label="Instagram">IG</a>
-            <a href="#" aria-label="Facebook">FB</a>
-            <a href="#" aria-label="YouTube">YT</a>
-        </div>
-
-        <span>
-            Crafted for unforgettable journeys.
-        </span>
 
     </div>
 
 </footer>
 
 
-<!-- FLOATING WHATSAPP -->
+<!-- =========================================
+     WHATSAPP FLOAT
+========================================= -->
+
+<!-- REPLACE 919999999999 WITH ACTUAL NUMBER -->
+
 <a
-    href="https://wa.me/919995068622?text=Hello%2C%20I%20would%20like%20to%20plan%20a%20cruise."
+    href="https://wa.me/919999999999?text=Hello%20Kayal%20Cruise,%20I%20would%20like%20to%20make%20an%20inquiry."
     target="_blank"
-    class="floating-whatsapp"
-    aria-label="Chat on WhatsApp"
->
-    <i class="fa-brands fa-whatsapp"></i>
-    <small>Chat with us</small>
+    class="whatsapp-float"
+    aria-label="Chat on WhatsApp">
+
+    ☎
+
 </a>
 
 
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script>
+
+
+/* =========================================
+   HEADER SCROLL
+========================================= */
+
+const header = document.getElementById("header");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 30) {
+
+        header.classList.add("scrolled");
+
+    } else {
+
+        header.classList.remove("scrolled");
+
+    }
+
+});
+
+
+/* =========================================
+   MOBILE MENU
+========================================= */
+
+const menuButton =
+    document.getElementById("menuButton");
+
+const mobileMenu =
+    document.getElementById("mobileMenu");
+
+
+menuButton.addEventListener("click", () => {
+
+    mobileMenu.classList.toggle("active");
+
+});
+
+
+document
+    .querySelectorAll(".mobile-menu a")
+    .forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            mobileMenu.classList.remove("active");
+
+        });
+
+    });
+
+
+/* =========================================
+   CRUISE TABS
+========================================= */
+
+const tabs =
+    document.querySelectorAll(".cruise-tab");
+
+const panels =
+    document.querySelectorAll(".cruise-panel");
+
+
+tabs.forEach(tab => {
+
+    tab.addEventListener("click", () => {
+
+        const target =
+            tab.getAttribute("data-tab");
+
+
+        tabs.forEach(item => {
+
+            item.classList.remove("active");
+
+        });
+
+
+        panels.forEach(panel => {
+
+            panel.classList.remove("active");
+
+        });
+
+
+        tab.classList.add("active");
+
+        document
+            .getElementById(target)
+            .classList.add("active");
+
+    });
+
+});
+
+
+/* =========================================
+   WHATSAPP INQUIRY FORM
+========================================= */
+
+const form =
+    document.getElementById("inquiryForm");
+
+
+form.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+
+    const name =
+        document.getElementById("name").value;
+
+    const phone =
+        document.getElementById("phone").value;
+
+    const email =
+        document.getElementById("email").value;
+
+    const date =
+        document.getElementById("date").value;
+
+    const guests =
+        document.getElementById("guests").value;
+
+    const bedrooms =
+        document.getElementById("bedrooms").value;
+
+    const cruiseType =
+        document.getElementById("cruiseType").value;
+
+    const location =
+        document.getElementById("location").value;
+
+    const requirements =
+        document.getElementById("requirements").value;
+
+
+    const message =
+
+`Hello Kayal Cruise,
+
+I would like to make a houseboat inquiry.
+
+Name: ${name}
+Phone / WhatsApp: ${phone}
+Email: ${email || "Not provided"}
+Travel Date: ${date}
+Number of Guests: ${guests}
+Bedrooms Required: ${bedrooms || "Not specified"}
+Cruise Type: ${cruiseType}
+Preferred Location: ${location}
+
+Special Requirements:
+${requirements || "None"}
+
+Thank you.`;
+
+
+    /*
+       ========================================
+       REPLACE THIS NUMBER
+       ========================================
+    */
+
+    const whatsappNumber =
+        "919999999999";
+
+
+    const whatsappURL =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(message);
+
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
+
+});
+
+
+/* =========================================
+   REVEAL ANIMATION
+========================================= */
+
+const observer =
+    new IntersectionObserver(
+
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.style.opacity = "1";
+
+                    entry.target.style.transform =
+                        "translateY(0)";
+
+                    observer.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: .08
+        }
+
+    );
+
+
+document
+    .querySelectorAll(
+        ".fleet-card, .why-card, .food-card, .destination-card"
+    )
+    .forEach(element => {
+
+        element.style.opacity = "0";
+
+        element.style.transform =
+            "translateY(25px)";
+
+        element.style.transition =
+            "opacity .7s ease, transform .7s ease";
+
+        observer.observe(element);
+
+    });
+
+
+</script>
 
 
 
 
 
 
-    <!-- JS -->
-    <script src="script.js"></script>
+
+
+
+
+
+<script>
+function enquireFleet(packageName) {
+
+    // Replace this with Kayal Cruise's actual WhatsApp number
+    const whatsappNumber = "919999999999";
+
+    const message = `Hello Kayal Cruise,
+
+I am interested in the following houseboat package:
+
+Package: ${packageName}
+
+Please share the details, availability and pricing.
+
+Thank you.`;
+
+    const whatsappURL =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(message);
+
+    window.open(whatsappURL, "_blank");
+}
+</script>
+
+
+
+
+
 
 </body>
 </html>
