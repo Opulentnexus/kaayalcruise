@@ -1587,6 +1587,766 @@
 
         }
 
+
+
+
+
+
+/* ============================================
+   KAYAL CRUISE — MODERN LUXURY STYLE
+   Clean layout • Elegant cards • Bold buttons
+============================================ */
+
+#fleet {
+    --kc-green: #064e38;
+    --kc-deep: #033b2a;
+    --kc-gold: #c29b45;
+    --kc-cream: #faf9f3;
+    --kc-text: #34483d;
+    --kc-muted: #78837b;
+
+    padding: 90px 0;
+    overflow: hidden;
+    background: #fff;
+    color: var(--kc-text);
+}
+
+#fleet *,
+#fleet *::before,
+#fleet *::after {
+    box-sizing: border-box;
+}
+
+/* SECTION INTRO */
+
+#fleet .fleet-intro {
+    margin-bottom: 15px;
+}
+
+#fleet .eyebrow {
+    margin-bottom: 14px;
+    color: var(--kc-gold);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+#fleet .section-title {
+    max-width: 760px;
+    margin: 0;
+    color: var(--kc-deep);
+    font-size: clamp(32px, 4.5vw, 50px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -1.2px;
+}
+
+#fleet .section-description {
+    max-width: 720px;
+    margin-top: 18px;
+    color: var(--kc-muted);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* ============================================
+   LEIA CRUISE — FEATURED EXPERIENCE
+============================================ */
+
+#fleet .leia-feature {
+    position: relative;
+    margin: 45px 0 95px;
+    padding: clamp(30px, 5vw, 65px);
+    overflow: hidden;
+    border-radius: 8px 70px 8px 8px;
+    background:
+        radial-gradient(
+            circle at 95% 10%,
+            rgba(194, 155, 69, .17),
+            transparent 32%
+        ),
+        linear-gradient(120deg, #f1f5e9, #fbfaf4 65%, #e6eee1);
+}
+
+#fleet .leia-feature::after {
+    position: absolute;
+    right: -55px;
+    bottom: -100px;
+    width: 280px;
+    height: 280px;
+    border: 1px solid rgba(6, 78, 56, .12);
+    border-radius: 50%;
+    content: "";
+    pointer-events: none;
+}
+
+#fleet .leia-feature-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+}
+
+#fleet .leia-label {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: #98762c;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+#fleet .leia-feature h3 {
+    margin: 0 0 16px;
+    color: var(--kc-green);
+    font-size: clamp(38px, 5vw, 58px);
+    line-height: 1.1;
+}
+
+#fleet .leia-feature p {
+    max-width: 680px;
+    color: #637267;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+#fleet .leia-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    margin: 32px 0;
+}
+
+#fleet .leia-stats > div {
+    min-width: 140px;
+    padding: 4px 25px;
+    border-left: 2px solid rgba(194, 155, 69, .65);
+}
+
+#fleet .leia-stats > div:first-child {
+    padding-left: 0;
+    border-left: 0;
+}
+
+#fleet .leia-stats strong,
+#fleet .leia-stats span {
+    display: block;
+}
+
+#fleet .leia-stats strong {
+    color: var(--kc-green);
+    font-size: 15px;
+}
+
+#fleet .leia-stats span {
+    margin-top: 7px;
+    color: var(--kc-muted);
+    font-size: 12px;
+}
+
+#fleet .leia-feature .leia-amenities {
+    color: var(--kc-text);
+    font-size: 14px;
+}
+
+/* ============================================
+   PACKAGE SECTION HEADING
+============================================ */
+
+#fleet .package-heading {
+    max-width: 760px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+#fleet .package-heading .section-title {
+    margin: 0 auto;
+}
+
+#fleet .package-heading .section-description {
+    margin: 15px auto 0;
+}
+
+/* ============================================
+   PACKAGE GRID
+============================================ */
+
+#fleet .cruise-package-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 28px;
+}
+
+/* ============================================
+   MENU CARDS — MINIMAL RESORT STYLE
+============================================ */
+
+#fleet .cruise-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: 100%;
+    padding: 30px 28px;
+    overflow: hidden;
+    border: 1px solid #eceee6;
+    border-radius: 5px 28px 5px 5px;
+    background: var(--kc-cream);
+    box-shadow: 0 8px 25px rgba(19, 54, 39, .035);
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+}
+
+#fleet .cruise-card::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 55px;
+    height: 3px;
+    background: var(--kc-gold);
+    content: "";
+    transition: width .3s ease;
+}
+
+#fleet .cruise-card:hover {
+    transform: translateY(-6px);
+    border-color: #d8dfd2;
+    box-shadow: 0 18px 40px rgba(19, 54, 39, .09);
+}
+
+#fleet .cruise-card:hover::before {
+    width: 100%;
+}
+
+/* Package top row */
+
+#fleet .package-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+#fleet .package-type {
+    color: #94752e;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    line-height: 1.6;
+}
+
+#fleet .package-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #e7eee1;
+    font-size: 22px;
+    transition: transform .3s ease;
+}
+
+#fleet .cruise-card:hover .package-icon {
+    transform: rotate(-8deg) scale(1.08);
+}
+
+/* Package title */
+
+#fleet .cruise-card h3 {
+    margin: 0 0 12px;
+    color: var(--kc-green);
+    font-size: 24px;
+    font-weight: 750;
+    line-height: 1.3;
+    letter-spacing: -.5px;
+}
+
+#fleet .package-description {
+    margin: 0 0 26px;
+    color: var(--kc-muted);
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+/* Menu category headings */
+
+#fleet .cruise-card h4 {
+    margin: 23px 0 10px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid #e5e9df;
+    color: var(--kc-green);
+    font-size: 14px;
+    font-weight: 750;
+    line-height: 1.5;
+}
+
+/* Menu items */
+
+#fleet .cruise-card ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+#fleet .cruise-card li {
+    margin-bottom: 8px;
+    padding-left: 3px;
+    color: #59675d;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+#fleet .cruise-card li::marker {
+    color: var(--kc-gold);
+}
+
+#fleet .cruise-card li:last-child {
+    margin-bottom: 0;
+}
+
+/* ============================================
+   PREMIUM CALL-TO-ACTION BUTTONS
+============================================ */
+
+#fleet .fleet-enquire,
+#fleet .cruise-card > a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 52px;
+    margin-top: auto;
+    padding: 15px 22px;
+    overflow: hidden;
+    border: 1px solid var(--kc-green);
+    border-radius: 100px;
+    background: var(--kc-green);
+    color: #fff !important;
+    font-size: 13px;
+    font-weight: 750;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none !important;
+    box-shadow: 0 6px 15px rgba(6, 78, 56, .12);
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease,
+        transform .25s ease;
+}
+
+/* Arrow indicator */
+
+#fleet .fleet-enquire::after,
+#fleet .cruise-card > a::after {
+    content: "↗";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .15);
+    font-size: 16px;
+    line-height: 1;
+    transition:
+        transform .25s ease,
+        background .25s ease;
+}
+
+#fleet .fleet-enquire:hover,
+#fleet .cruise-card > a:hover {
+    transform: translateY(-3px);
+    border-color: var(--kc-deep);
+    background: var(--kc-deep);
+    color: #fff !important;
+    box-shadow: 0 12px 24px rgba(6, 78, 56, .22);
+}
+
+#fleet .fleet-enquire:hover::after,
+#fleet .cruise-card > a:hover::after {
+    transform: translate(2px, -2px);
+    background: rgba(255, 255, 255, .25);
+}
+
+/* Give menu cards equal-height buttons */
+
+#fleet .cruise-card > a {
+    align-self: flex-start;
+    margin-top: auto;
+    margin-top: 30px;
+}
+
+/* Button focus for keyboard users */
+
+#fleet .fleet-enquire:focus-visible,
+#fleet .cruise-card > a:focus-visible {
+    outline: 3px solid var(--kc-gold);
+    outline-offset: 4px;
+}
+
+/* ============================================
+   MENU NOTE
+============================================ */
+
+#fleet .fleet-note {
+    margin: 35px 0 0;
+    padding: 18px 22px;
+    border-left: 3px solid var(--kc-gold);
+    background: #f6f6ef;
+    color: var(--kc-muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* ============================================
+   TABLET
+============================================ */
+
+@media (max-width: 1024px) {
+    #fleet {
+        padding: 75px 0;
+    }
+
+    #fleet .cruise-package-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    #fleet .cruise-card {
+        padding: 26px 23px;
+    }
+
+    #fleet .leia-feature {
+        margin-bottom: 75px;
+    }
+}
+
+/* ============================================
+   MOBILE
+============================================ */
+
+@media (max-width: 600px) {
+    #fleet {
+        padding: 58px 0;
+    }
+
+    #fleet .section-title {
+        font-size: clamp(29px, 8vw, 36px);
+        letter-spacing: -.7px;
+    }
+
+    #fleet .section-description {
+        font-size: 14px;
+    }
+
+    #fleet .leia-feature {
+        margin: 30px 0 60px;
+        padding: 27px 21px;
+        border-radius: 6px 42px 6px 6px;
+    }
+
+    #fleet .leia-feature h3 {
+        font-size: 39px;
+    }
+
+    #fleet .leia-feature p {
+        font-size: 14px;
+    }
+
+    #fleet .leia-stats {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px 8px;
+    }
+
+    #fleet .leia-stats > div {
+        min-width: 0;
+        padding: 3px 10px;
+        border-left: 2px solid rgba(194, 155, 69, .65);
+    }
+
+    #fleet .leia-stats > div:first-child {
+        padding-left: 10px;
+        border-left: 2px solid rgba(194, 155, 69, .65);
+    }
+
+    #fleet .package-heading {
+        margin-bottom: 32px;
+        text-align: left;
+    }
+
+    #fleet .package-heading .section-title,
+    #fleet .package-heading .section-description {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #fleet .cruise-package-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    #fleet .cruise-card {
+        padding: 27px 22px;
+        border-radius: 5px 25px 5px 5px;
+    }
+
+    #fleet .cruise-card h3 {
+        font-size: 23px;
+    }
+
+    #fleet .cruise-card li {
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+    #fleet .fleet-enquire,
+    #fleet .cruise-card > a {
+        width: 100%;
+        min-height: 54px;
+        padding: 14px 18px;
+        justify-content: space-between;
+        font-size: 13px;
+    }
+
+    #fleet .fleet-note {
+        margin-top: 25px;
+        padding: 15px;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY
+============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    #fleet *,
+    #fleet *::before,
+    #fleet *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+
+    #fleet .cruise-card:hover,
+    #fleet .fleet-enquire:hover,
+    #fleet .cruise-card > a:hover {
+        transform: none;
+    }
+}
+
+/* FIX: MAKE KAYAL CRUISE BUTTONS VISIBLE */
+
+#fleet .fleet-enquire,
+#fleet .cruise-card > a,
+#fleet a.fleet-enquire,
+#fleet .cruise-card a {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    width: 100%;
+    min-height: 54px;
+    margin-top: 28px;
+    padding: 15px 20px;
+
+    background-color: #075438 !important;
+    background-image: none !important;
+    color: #ffffff !important;
+
+    border: 2px solid #075438 !important;
+    border-radius: 50px;
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none !important;
+
+    position: relative;
+    z-index: 5;
+    overflow: visible;
+    cursor: pointer;
+
+    box-shadow: 0 6px 18px rgba(7, 84, 56, 0.22) !important;
+    transition: all 0.25s ease;
+}
+
+/* Arrow */
+
+#fleet .fleet-enquire::after,
+#fleet .cruise-card > a::after,
+#fleet .cruise-card a::after {
+    content: "→";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+
+    background: rgba(255, 255, 255, 0.18);
+    color: #ffffff !important;
+    border-radius: 50%;
+    font-size: 19px;
+    line-height: 1;
+}
+
+/* Hover */
+
+#fleet .fleet-enquire:hover,
+#fleet .cruise-card > a:hover,
+#fleet .cruise-card a:hover {
+    background-color: #b18b35 !important;
+    border-color: #b18b35 !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 9px 22px rgba(7, 84, 56, 0.24) !important;
+}
+
+/* Prevent parent styles from clipping buttons */
+
+#fleet .cruise-card {
+    overflow: visible;
+}
+
+#fleet .cruise-card > a:last-child {
+    margin-top: 28px;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    #fleet .fleet-enquire,
+    #fleet .cruise-card > a,
+    #fleet .cruise-card a {
+        min-height: 56px;
+        padding: 14px 18px;
+        font-size: 14px;
+    }
+}
+
+/* =========================================
+   KAYAL CRUISE — ISOLATED BUTTON FIX
+========================================= */
+
+#fleet .cruise-card > a,
+#fleet .leia-feature-content > a.fleet-enquire {
+    all: unset;
+    box-sizing: border-box !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 14px !important;
+
+    width: 100% !important;
+    min-height: 54px !important;
+    margin: 28px 0 0 !important;
+    padding: 13px 20px !important;
+
+    background: #075438 !important;
+    color: #ffffff !important;
+
+    border: 1px solid #075438 !important;
+    border-radius: 50px !important;
+
+    font-family: inherit !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    line-height: 1.5 !important;
+    text-align: left !important;
+    text-decoration: none !important;
+
+    cursor: pointer !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 10 !important;
+
+    box-shadow: 0 5px 16px rgba(7, 84, 56, 0.18) !important;
+    transition: background 0.25s ease,
+                transform 0.25s ease,
+                box-shadow 0.25s ease !important;
+}
+
+/* Add the arrow without relying on inherited icon styles */
+
+#fleet .cruise-card > a::after,
+#fleet .leia-feature-content > a.fleet-enquire::after {
+    content: "→" !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 28px !important;
+
+    width: 28px !important;
+    height: 28px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: rgba(255, 255, 255, 0.18) !important;
+    color: #ffffff !important;
+    border: 0 !important;
+    border-radius: 50% !important;
+
+    font-size: 19px !important;
+    line-height: 1 !important;
+}
+
+/* Hover state */
+
+#fleet .cruise-card > a:hover,
+#fleet .leia-feature-content > a.fleet-enquire:hover {
+    background: #b18b35 !important;
+    color: #ffffff !important;
+    border-color: #b18b35 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 9px 22px rgba(7, 84, 56, 0.22) !important;
+}
+
+/* Keep the button inside each card */
+
+#fleet .cruise-card {
+    min-width: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+}
+
+#fleet .cruise-card > a:last-child {
+    align-self: stretch !important;
+}
+
+@media (max-width: 600px) {
+    #fleet .cruise-card > a,
+    #fleet .leia-feature-content > a.fleet-enquire {
+        min-height: 54px !important;
+        padding: 13px 17px !important;
+        font-size: 13px !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+        
     </style>
 </head>
 
@@ -1617,7 +2377,7 @@
 
             <a href="#fleet" class="nav-link">Our Fleet</a>
 
-            <a href="#cruises" class="nav-link">Cruises</a>
+
 
             <a href="#food" class="nav-link">Food</a>
 
@@ -1652,15 +2412,15 @@
 
     <a href="#fleet">Our Fleet</a>
 
-    <a href="#cruises">Cruises</a>
+   
 
     <a href="#food">Food</a>
 
     <a href="#contact">Contact</a>
 
-    <!-- REPLACE WHATSAPP NUMBER -->
+    <!-- WHATSAPP CONTACT -->
     <a
-        href="https://wa.me/919999999999"
+        href="https://wa.me/919539006660"
         target="_blank"
         class="mobile-whatsapp">
 
@@ -1726,10 +2486,10 @@
                 </a>
 
 
-                <!-- REPLACE WHATSAPP NUMBER -->
+                <!-- WHATSAPP CONTACT -->
 
                 <a
-                    href="https://wa.me/919999999999?text=Hello%20Kayal%20Cruise,%20I%20would%20like%20to%20know%20more%20about%20your%20houseboat%20cruises."
+                    href="https://wa.me/919539006660?text=Hello%20Kayal%20Cruise,%20I%20would%20like%20to%20know%20more%20about%20your%20houseboat%20cruises."
                     target="_blank"
                     class="btn-secondary">
 
@@ -2319,632 +3079,402 @@
 
 
 <!-- =========================================
-     FLEET
+     KAYAL CRUISE — FLEET & PACKAGES
 ========================================= -->
 
 <section class="section" id="fleet">
-
     <div class="container">
 
         <div class="fleet-intro">
-
             <div>
-
-                <div class="eyebrow">
-                    OUR HOUSEBOAT FLEET
-                </div>
-
+                <div class="eyebrow">KAYAL CRUISE EXPERIENCES</div>
                 <h2 class="section-title">
-                    Your journey deserves the right houseboat.
+                    Discover Your Perfect Backwater Escape.
                 </h2>
-
             </div>
-
         </div>
 
-
-        <p class="section-description" style="margin-bottom:45px;">
-            Explore our collection of houseboats designed for different
-            types of travellers—from couples seeking a private escape
-            to families and groups looking for a comfortable backwater
-            holiday.
+        <p class="section-description" style="margin-bottom:35px;">
+            From relaxing day cruises with authentic Kerala cuisine
+            to luxurious overnight stays, discover a memorable
+            houseboat experience with Kayal Cruise.
         </p>
 
+        <!-- LEIA LUXURY HOUSEBOAT -->
 
-        <div class="fleet-grid">
-
-
-            <div class="fleet-card">
-
-                <div class="fleet-icon">🚤</div>
-
-                <small>HOUSEBOAT CATEGORY</small>
-
-                <h3>1 Bedroom Houseboats</h3>
-
+        <div class="leia-feature">
+            <div class="leia-feature-content">
+                <span class="leia-label">FEATURED LUXURY HOUSEBOAT</span>
+                <h3>Leia Cruise</h3>
                 <p>
-                    Comfortable houseboats designed for couples and
-                    smaller private stays.
+                    Experience the beauty of Kerala's backwaters aboard
+                    Leia Cruise, a luxury houseboat featuring comfortable
+                    accommodation, modern amenities and open-air deck spaces.
                 </p>
 
-                 <!-- 1 Bedroom -->
-<a href="#" onclick="enquireFleet('1 Bedroom Houseboat'); return false;">
-    Enquire Now →
-</a>
+                <div class="leia-stats">
+                    <div>
+                        <strong>Luxury</strong>
+                        <span>Category</span>
+                    </div>
+                    <div>
+                        <strong>4 Bedrooms</strong>
+                        <span>As provided</span>
+                    </div>
+                    <div>
+                        <strong>Upper Deck</strong>
+                        <span>Open Sun Deck</span>
+                    </div>
+                </div>
 
-            </div>
-
-
-            <div class="fleet-card">
-
-                <div class="fleet-icon">🚤</div>
-
-                <small>HOUSEBOAT CATEGORY</small>
-
-                <h3>2 Bedroom Houseboats</h3>
-
-                <p>
-                    A comfortable option for families and small groups.
+                <p class="leia-amenities">
+                    <strong>Amenities:</strong> Refrigerator, Wi-Fi,
+                    TV, all-time AC, hot water and toiletries.
                 </p>
 
-                 <!-- 2 Bedroom -->
-<a href="#" onclick="enquireFleet('2 Bedroom Houseboat'); return false;">
-    Enquire Now →
-</a>
-
+                <a href="#cruise-packages"
+                   class="fleet-enquire"
+                   onclick="enquireFleet('Leia Cruise Luxury Houseboat'); return false;">
+                    Enquire About Leia Cruise →
+                </a>
             </div>
+        </div>
 
+        <!-- CRUISE PACKAGES -->
 
-            <div class="fleet-card">
+        <div id="cruise-packages" class="package-heading">
+            <div class="eyebrow">OUR CRUISE MENUS</div>
+            <h2 class="section-title">Choose Your Cruise Experience</h2>
+            <p class="section-description">
+                Enjoy freshly prepared food and scenic backwater views
+                with our vegetarian and non-vegetarian cruise packages.
+            </p>
+        </div>
 
-                <div class="fleet-icon">🚤</div>
+        <div class="fleet-grid cruise-package-grid">
 
-                <small>HOUSEBOAT CATEGORY</small>
+            <!-- 1. DAY PREMIUM NON-VEG -->
 
-                <h3>3 Bedroom Houseboats</h3>
+            <article class="fleet-card cruise-card">
+                <div class="package-top">
+                    <span class="package-type">DAY CRUISE</span>
+                    <span class="package-icon">🍗</span>
+                </div>
 
-                <p>
-                    Spacious accommodation suitable for larger families
-                    and groups.
+                <h3>Premium Non-Veg</h3>
+                <p class="package-description">
+                    A delightful day on the backwaters with traditional
+                    Kerala dishes and delicious seafood.
                 </p>
 
-                 <a href="#" onclick="enquireFleet('3 Bedroom Houseboat'); return false;">
-    Enquire Now →
-</a>
+                <h4>Welcome Drink</h4>
+                <ul>
+                    <li>Fresh juice or tender coconut</li>
+                </ul>
 
-            </div>
+                <h4>Starter</h4>
+                <ul>
+                    <li>Banana chips</li>
+                    <li>Tapioca fry</li>
+                </ul>
 
+                <h4>Lunch</h4>
+                <ul>
+                    <li>Kerala rice / plain rice</li>
+                    <li>Chapathi</li>
+                    <li>Dal fry, aviyal and sambar</li>
+                    <li>Thoran</li>
+                    <li>Alleppey chicken curry / roast</li>
+                    <li>Karimeen fry (pearl spot)</li>
+                    <li>Pappad, salad, pickle and raita</li>
+                </ul>
 
-            <div class="fleet-card">
+                <h4>Dessert & Refreshments</h4>
+                <ul>
+                    <li>Vermicelli payasam</li>
+                    <li>Tea / coffee, banana fritters and cookies</li>
+                </ul>
 
-                <div class="fleet-icon">✨</div>
+                <a href="#" onclick="enquireFleet('Day Cruise - Premium Non-Veg Menu'); return false;">
+                    Enquire Now →
+                </a>
+            </article>
 
-                <small>HOUSEBOAT CATEGORY</small>
+            <!-- 2. DAY VEG -->
 
-                <h3>Premium Houseboats</h3>
+            <article class="fleet-card cruise-card">
+                <div class="package-top">
+                    <span class="package-type">DAY CRUISE</span>
+                    <span class="package-icon">🌿</span>
+                </div>
 
-                <p>
-                    Premium floating accommodation for guests looking
-                    for enhanced comfort.
+                <h3>Vegetarian Menu</h3>
+                <p class="package-description">
+                    A traditional Kerala vegetarian meal with local
+                    flavours and refreshing drinks.
                 </p>
 
-                 <a href="#" onclick="enquireFleet('Premium Houseboat'); return false;">
-    Enquire Now →
-</a>
+                <h4>Welcome Drink & Starter</h4>
+                <ul>
+                    <li>Fresh juice or tender coconut</li>
+                    <li>Banana chips and tapioca fry</li>
+                </ul>
 
-            </div>
+                <h4>Lunch</h4>
+                <ul>
+                    <li>Kerala rice / plain rice</li>
+                    <li>Chapathi / Kerala porotta</li>
+                    <li>Dal fry, aviyal and sambar</li>
+                    <li>Chilly gobi</li>
+                    <li>Paneer butter masala</li>
+                    <li>Long beans mezhukupuratti</li>
+                    <li>Pappad, salad, pickle and raita</li>
+                </ul>
 
+                <h4>Dessert & Refreshments</h4>
+                <ul>
+                    <li>Vermicelli payasam</li>
+                    <li>Tea / coffee, banana fritters and cookies</li>
+                </ul>
 
-            <div class="fleet-card">
+                <a href="#" onclick="enquireFleet('Day Cruise - Vegetarian Menu'); return false;">
+                    Enquire Now →
+                </a>
+            </article>
 
-                <div class="fleet-icon">⭐</div>
+            <!-- 3. DAY LUXURY NON-VEG -->
 
-                <small>HOUSEBOAT CATEGORY</small>
+            <article class="fleet-card cruise-card">
+                <div class="package-top">
+                    <span class="package-type">DAY CRUISE</span>
+                    <span class="package-icon">✨</span>
+                </div>
 
-                <h3>Luxury Houseboats</h3>
-
-                <p>
-                    Elegant houseboat experiences combining Kerala's
-                    traditional character with modern comfort.
+                <h3>Luxury Non-Veg</h3>
+                <p class="package-description">
+                    A premium culinary experience featuring Kerala
+                    specialities, fresh seafood and traditional flavours.
                 </p>
 
-                 <a href="#" onclick="enquireFleet('Luxury Houseboat'); return false;">
-    Enquire Now →
-</a>
+                <h4>Welcome Drink</h4>
+                <ul>
+                    <li>Fresh juice / tender coconut</li>
+                </ul>
 
-            </div>
+                <h4>Starter</h4>
+                <ul>
+                    <li>Kallappam with fish molly</li>
+                    <li>Or kappa with Alleppey fish curry</li>
+                </ul>
 
+                <h4>Lunch</h4>
+                <ul>
+                    <li>Kerala rice / plain rice</li>
+                    <li>Aviyal, thoran and banana / pineapple kalan</li>
+                    <li>Long beans mezhukupuratti</li>
+                    <li>Alleppey chicken curry / roast</li>
+                    <li>Karimeen fry (pearl spot)</li>
+                    <li>Prawns roast</li>
+                    <li>Pappad, salad, pickle and raita</li>
+                </ul>
 
-            <div class="fleet-card">
+                <h4>Dessert & Refreshments</h4>
+                <ul>
+                    <li>Vermicelli payasam</li>
+                    <li>Tea / coffee, banana fritters and cookies</li>
+                </ul>
 
-                <div class="fleet-icon">👨‍👩‍👧‍👦</div>
+                <a href="#" onclick="enquireFleet('Day Cruise - Luxury Non-Veg Menu'); return false;">
+                    Enquire Now →
+                </a>
+            </article>
 
-                <small>HOUSEBOAT CATEGORY</small>
+            <!-- 4. OVERNIGHT PREMIUM NON-VEG -->
 
-                <h3>Group Houseboats</h3>
+            <article class="fleet-card cruise-card">
+                <div class="package-top">
+                    <span class="package-type">OVERNIGHT CRUISE</span>
+                    <span class="package-icon">🌅</span>
+                </div>
 
-                <p>
-                    Houseboat options designed for groups looking for
-                    a memorable backwater journey together.
+                <h3>Premium Non-Veg</h3>
+                <p class="package-description">
+                    Savour a complete overnight backwater getaway with
+                    lunch, evening refreshments, dinner and breakfast.
                 </p>
 
-                 <a href="#" onclick="enquireFleet('Group Houseboat'); return false;">
-    Enquire Now →
-</a>
+                <h4>Welcome Drink</h4>
+                <ul>
+                    <li>Fresh juice / tender coconut</li>
+                </ul>
 
-            </div>
+                <h4>Lunch</h4>
+                <ul>
+                    <li>Kerala rice, chapathi and dal fry</li>
+                    <li>Aviyal, sambar and thoran</li>
+                    <li>Alleppey chicken curry / roast</li>
+                    <li>Karimeen fry (pearl spot)</li>
+                    <li>Prawns roast</li>
+                    <li>Pappad, salad, pickle and raita</li>
+                </ul>
+
+                <h4>Evening Refreshments</h4>
+                <ul>
+                    <li>Tea / coffee, banana fritters and cookies</li>
+                </ul>
+
+                <h4>Dinner</h4>
+                <ul>
+                    <li>Rice / fried rice / pulav</li>
+                    <li>Porotta / chapathi and dal fry</li>
+                    <li>Chilly gobi and paneer butter masala</li>
+                    <li>Long beans mezhukupuratti</li>
+                    <li>Alleppey fish curry and chicken 65 / curry</li>
+                    <li>Pappad, salad and pickle</li>
+                </ul>
+
+                <h4>Dessert & Breakfast</h4>
+                <ul>
+                    <li>Vermicelli payasam</li>
+                    <li>Cut fruits with ice cream</li>
+                    <li>Bread, butter, jam, juice, tea / coffee</li>
+                    <li>Egg to order and Kellogg's with milk</li>
+                    <li>One Kerala breakfast item on request</li>
+                </ul>
+
+                <a href="#" onclick="enquireFleet('Overnight Cruise - Premium Non-Veg Menu'); return false;">
+                    Enquire Now →
+                </a>
+            </article>
+
+            <!-- 5. OVERNIGHT LUXURY VEG -->
+
+            <article class="fleet-card cruise-card">
+                <div class="package-top">
+                    <span class="package-type">OVERNIGHT CRUISE</span>
+                    <span class="package-icon">🌱</span>
+                </div>
+
+                <h3>Luxury Vegetarian</h3>
+                <p class="package-description">
+                    A traditional vegetarian feast paired with an
+                    overnight stay surrounded by Kerala's backwaters.
+                </p>
+
+                <h4>Welcome Drink & Starter</h4>
+                <ul>
+                    <li>Fresh juice / tender coconut</li>
+                    <li>Appam with vegetable stew</li>
+                </ul>
+
+                <h4>Lunch — Banana Leaf</h4>
+                <ul>
+                    <li>Kerala rice / plain rice</li>
+                    <li>Inji curry, dal fry, aviyal and sambar</li>
+                    <li>Banana / pineapple kalan</li>
+                    <li>Thoran, olan, pachadi and kichadi</li>
+                    <li>Long beans mezhukupuratti</li>
+                    <li>Pappad, salad, pickle and raita</li>
+                </ul>
+
+                <h4>Dessert & Refreshments</h4>
+                <ul>
+                    <li>Vermicelli payasam</li>
+                    <li>Tea / coffee, banana fritters and cookies</li>
+                </ul>
+
+                <h4>Dinner</h4>
+                <ul>
+                    <li>Fried rice / pulav</li>
+                    <li>Kerala porotta / chapathi</li>
+                    <li>Chilly gobi and paneer butter masala</li>
+                    <li>Bhindi fry and dal fry</li>
+                    <li>Ice cream and cut fruits</li>
+                </ul>
+
+                <h4>Breakfast</h4>
+                <ul>
+                    <li>Bread, butter, jam, tea / coffee and fresh juice</li>
+                    <li>Seasonal fruits and cornflakes with milk</li>
+                    <li>One Kerala breakfast item on request</li>
+                    <li>Idli, dosa, idiyappam or poori masala</li>
+                </ul>
+
+                <a href="#" onclick="enquireFleet('Overnight Cruise - Luxury Vegetarian Menu'); return false;">
+                    Enquire Now →
+                </a>
+            </article>
+
+            <!-- 6. OVERNIGHT LUXURY NON-VEG -->
+
+            <article class="fleet-card cruise-card">
+                <div class="package-top">
+                    <span class="package-type">OVERNIGHT CRUISE</span>
+                    <span class="package-icon">⭐</span>
+                </div>
+
+                <h3>Luxury Non-Veg</h3>
+                <p class="package-description">
+                    Enjoy a luxurious overnight culinary journey with
+                    Kerala favourites, seafood, a hearty dinner and breakfast.
+                </p>
+
+                <h4>Welcome Drink & Lunch</h4>
+                <ul>
+                    <li>Fresh juice / tender coconut</li>
+                    <li>Kerala rice, chapathi and dal fry</li>
+                    <li>Aviyal, sambar and thoran</li>
+                    <li>Alleppey chicken curry / roast</li>
+                    <li>Karimeen fry (pearl spot)</li>
+                    <li>Pappad, salad, pickle and raita</li>
+                    <li>Vermicelli payasam</li>
+                </ul>
+
+                <h4>Evening Refreshments</h4>
+                <ul>
+                    <li>Tea / coffee, banana fritters and cookies</li>
+                </ul>
+
+                <h4>Dinner</h4>
+                <ul>
+                    <li>Fried rice</li>
+                    <li>Porotta / chapathi</li>
+                    <li>Paneer butter masala</li>
+                    <li>Long beans mezhukupuratti</li>
+                    <li>Alleppey fish curry</li>
+                    <li>Chicken 65 / curry</li>
+                    <li>Pappad, salad and pickle</li>
+                    <li>Cut fruits</li>
+                </ul>
+
+                <h4>Breakfast</h4>
+                <ul>
+                    <li>Bread, butter and jam</li>
+                    <li>Fresh juice and tea / coffee</li>
+                    <li>Egg to order</li>
+                    <li>One Kerala breakfast item on request</li>
+                    <li>Appam with egg roast, puttu with kadala or idli with sambar and chutney</li>
+                </ul>
+
+                <a href="#" onclick="enquireFleet('Overnight Cruise - Luxury Non-Veg Menu'); return false;">
+                    Enquire Now →
+                </a>
+            </article>
 
         </div>
 
-
-        <p style="
-            margin-top:30px;
-            color:#7a817e;
-            font-size:12px;
-            line-height:1.7;
-        ">
-            * Actual boat names, room details, facilities, cruise routes
-            and photographs can be added once provided by Kayal Cruise.
+        <p class="fleet-note">
+            Menu items may vary according to the selected package and
+            availability. Please contact us to confirm the final menu,
+            cruise duration, room arrangement and pricing.
         </p>
 
     </div>
-
 </section>
 
 
-<!-- =========================================
-     CRUISES
-========================================= -->
 
-<section class="section section-dark" id="cruises">
 
-    <div class="container">
-
-        <div class="section-heading">
-
-            <div class="eyebrow">
-                CRUISE DETAILS
-            </div>
-
-            <h2 class="section-title">
-                Choose your way to experience the backwaters.
-            </h2>
-
-        </div>
-
-
-        <div class="cruise-tabs">
-
-            <button
-                class="cruise-tab active"
-                data-tab="overnight">
-
-                Overnight Cruise
-
-            </button>
-
-
-            <button
-                class="cruise-tab"
-                data-tab="day">
-
-                Day Cruise
-
-            </button>
-
-        </div>
-
-
-        <!-- OVERNIGHT -->
-
-        <div
-            class="cruise-panel active"
-            id="overnight">
-
-            <div class="cruise-header">
-
-                <div>
-
-                    <h3>
-                        Overnight Houseboat Cruise
-                    </h3>
-
-                    <p style="margin-top:15px;">
-                        A complete backwater experience with an overnight stay.
-                    </p>
-
-                </div>
-
-
-                <div class="time-cards">
-
-                    <div class="time-card">
-
-                        <span>CHECK-IN</span>
-
-                        <strong>
-                            12:00 PM
-                        </strong>
-
-                    </div>
-
-
-                    <div class="time-card">
-
-                        <span>CHECK-OUT</span>
-
-                        <strong>
-                            9:00 AM Next Day
-                        </strong>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="timeline">
-
-
-                <div class="timeline-item">
-
-                    <div class="timeline-time">
-                        11:45 AM
-                    </div>
-
-                    <div class="timeline-content">
-
-                        <strong>Arrival</strong>
-
-                        Arrive at the boarding point and complete
-                        the check-in formalities.
-
-                    </div>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <div class="timeline-time">
-                        12:00 PM
-                    </div>
-
-                    <div class="timeline-content">
-
-                        <strong>Cruise Begins</strong>
-
-                        Welcome aboard Kayal Cruise with a refreshing
-                        welcome drink before beginning your journey.
-
-                    </div>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <div class="timeline-time">
-                        12:30 PM
-                    </div>
-
-                    <div class="timeline-content">
-
-                        <strong>Lunch</strong>
-
-                        Freshly prepared Kerala-style lunch featuring
-                        two non-vegetarian dishes and accompanying
-                        menu items.
-
-                    </div>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <div class="timeline-time">
-                        Afternoon
-                    </div>
-
-                    <div class="timeline-content">
-
-                        <strong>Backwater Cruising</strong>
-
-                        Relax while the houseboat passes through scenic
-                        backwaters, villages, paddy fields and
-                        coconut-lined waterways.
-
-                    </div>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <div class="timeline-time">
-                        5–5:30 PM
-                    </div>
-
-                    <div class="timeline-content">
-
-                        <strong>Evening Halt</strong>
-
-                        The houseboat anchors at a suitable riverside
-                        location. Relax, enjoy the sunset and experience
-                        the peaceful atmosphere of the backwaters.
-
-                    </div>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <div class="timeline-time">
-                        Evening
-                    </div>
-
-                    <div class="timeline-content">
-
-                        <strong>Refreshment</strong>
-
-                        Enjoy your evening refreshment while relaxing
-                        on board.
-
-                    </div>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <div class="timeline-time">
-                        Night
-                    </div>
-
-                    <div class="timeline-content">
-
-                        <strong>Dinner</strong>
-
-                        Dinner will be served on the houseboat.
-                        Enjoy a peaceful night surrounded by the
-                        sounds of the backwaters.
-
-                    </div>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <div class="timeline-time">
-                        8–9 AM
-                    </div>
-
-                    <div class="timeline-content">
-
-                        <strong>Morning Cruise & Breakfast</strong>
-
-                        Wake up to the beauty of Kerala's backwaters.
-                        Enjoy approximately one hour of morning cruising,
-                        accompanied by breakfast.
-
-                    </div>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <div class="timeline-time">
-                        9:00 AM
-                    </div>
-
-                    <div class="timeline-content">
-
-                        <strong>Check-out</strong>
-
-                        The overnight houseboat experience concludes
-                        at 9:00 AM.
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- DAY -->
-
-        <div
-            class="cruise-panel"
-            id="day">
-
-            <div class="cruise-header">
-
-                <div>
-
-                    <h3>
-                        Day Cruise
-                    </h3>
-
-                    <p style="margin-top:15px;">
-                        Experience the backwaters in a day.
-                    </p>
-
-                </div>
-
-
-                <div class="time-cards">
-
-                    <div class="time-card">
-
-                        <span>ARRIVAL</span>
-
-                        <strong>
-                            11:15 AM
-                        </strong>
-
-                    </div>
-
-
-                    <div class="time-card">
-
-                        <span>CRUISE</span>
-
-                        <strong>
-                            11:30 AM – 4:30 PM
-                        </strong>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="timeline">
-
-
-                <div class="timeline-item">
-
-                    <div class="timeline-time">
-                        11:15 AM
-                    </div>
-
-                    <div class="timeline-content">
-
-                        <strong>Arrival & Check-in</strong>
-
-                        Complete the check-in formalities and get ready
-                        for your cruise.
-
-                    </div>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <div class="timeline-time">
-                        11:30 AM
-                    </div>
-
-                    <div class="timeline-content">
-
-                        <strong>Cruise Begins</strong>
-
-                        Welcome aboard with a refreshing welcome drink.
-
-                    </div>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <div class="timeline-time">
-                        Afternoon
-                    </div>
-
-                    <div class="timeline-content">
-
-                        <strong>Backwater Cruise</strong>
-
-                        Cruise through the beautiful waterways of
-                        Alleppey/Kumarakom while enjoying views of
-                        villages, paddy fields and coconut palms.
-
-                    </div>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <div class="timeline-time">
-                        Lunch
-                    </div>
-
-                    <div class="timeline-content">
-
-                        <strong>Kerala-style Lunch</strong>
-
-                        Enjoy a freshly prepared Kerala-style lunch
-                        on board.
-
-                    </div>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <div class="timeline-time">
-                        Evening
-                    </div>
-
-                    <div class="timeline-content">
-
-                        <strong>Refreshment</strong>
-
-                        Before the cruise concludes, enjoy a light
-                        evening refreshment.
-
-                    </div>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <div class="timeline-time">
-                        4:30 PM
-                    </div>
-
-                    <div class="timeline-content">
-
-                        <strong>Cruise Ends</strong>
-
-                        Return to the designated boarding point and
-                        conclude your day cruise.
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="early-note">
-
-            <strong>
-                Important: Arrive 15 Minutes Early
-            </strong>
-
-            <p>
-                To ensure a smooth experience for every guest,
-                please arrive 15 minutes before the scheduled
-                check-in time.
-            </p>
-
-            <p>
-                Overnight Cruise: 11:45 AM arrival → 12:00 PM departure
-                <br>
-                Day Cruise: 11:15 AM arrival → 11:30 AM departure
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
 
 
 <!-- =========================================
@@ -3122,17 +3652,6 @@
                 <div class="contact-details">
 
 
-                    <div class="contact-detail">
-
-                        <small>
-                            Office
-                        </small>
-
-                        <span>
-                            [Office Address]
-                        </span>
-
-                    </div>
 
 
                     <div class="contact-detail">
@@ -3142,7 +3661,7 @@
                         </small>
 
                         <span>
-                            [Phone Number]
+                           +91 9539006660
                         </span>
 
                     </div>
@@ -3155,23 +3674,13 @@
                         </small>
 
                         <span>
-                            [WhatsApp Number]
+                            +91 9539006660
                         </span>
 
                     </div>
 
 
-                    <div class="contact-detail">
-
-                        <small>
-                            Email
-                        </small>
-
-                        <span>
-                            [Email Address]
-                        </span>
-
-                    </div>
+                  
 
 
                     <div class="contact-detail">
@@ -3430,9 +3939,7 @@
 
                 <h4>Journey</h4>
 
-                <a href="#cruises">
-                    Overnight Cruise
-                </a>
+              
 
                 <a href="#cruises">
                     Day Cruise
@@ -3472,10 +3979,10 @@
      WHATSAPP FLOAT
 ========================================= -->
 
-<!-- REPLACE 919999999999 WITH ACTUAL NUMBER -->
+<!-- WHATSAPP CONTACT NUMBER -->
 
 <a
-    href="https://wa.me/919999999999?text=Hello%20Kayal%20Cruise,%20I%20would%20like%20to%20make%20an%20inquiry."
+    href="https://wa.me/919539006660?text=Hello%20Kayal%20Cruise,%20I%20would%20like%20to%20make%20an%20inquiry."
     target="_blank"
     class="whatsapp-float"
     aria-label="Chat on WhatsApp">
@@ -3652,12 +4159,12 @@ Thank you.`;
 
     /*
        ========================================
-       REPLACE THIS NUMBER
+       WHATSAPP CONTACT NUMBER
        ========================================
     */
 
     const whatsappNumber =
-        "919999999999";
+        "919539006660";
 
 
     const whatsappURL =
@@ -3745,7 +4252,7 @@ document
 function enquireFleet(packageName) {
 
     // Replace this with Kayal Cruise's actual WhatsApp number
-    const whatsappNumber = "919999999999";
+    const whatsappNumber = "919539006660";
 
     const message = `Hello Kayal Cruise,
 
