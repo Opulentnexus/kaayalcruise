@@ -1,0 +1,185 @@
+/* =========================================
+   COMPACT HOUSEBOAT FLEET GALLERY
+========================================= */
+
+.fleet-subtitle {
+    margin-bottom: 25px;
+    max-width: 650px;
+}
+
+.boat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.boat-card {
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.boat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.10);
+}
+
+.boat-image {
+    height: 175px;
+    position: relative;
+    overflow: hidden;
+    background: #e9eeec;
+}
+
+.boat-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.boat-card:hover .boat-image img {
+    transform: scale(1.06);
+}
+
+.boat-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 6px 10px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.94);
+    color: #253e35;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.boat-tag.ultra {
+    background: #d9b66e;
+    color: #fff;
+}
+
+.boat-tag.premium {
+    background: #263f35;
+    color: #fff;
+}
+
+.boat-info {
+    padding: 15px;
+}
+
+.boat-capacity {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #9b845b;
+}
+
+.boat-info h3 {
+    margin: 5px 0 13px;
+    font-size: 17px;
+    line-height: 1.3;
+    color: #243b32;
+}
+
+.boat-info a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding-top: 11px;
+    border-top: 1px solid #eaece9;
+    color: #526f5d;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.boat-info a:hover {
+    color: #b18c4c;
+}
+
+.boat-info a span {
+    font-size: 17px;
+}
+
+.fleet-bottom {
+    margin-top: 28px;
+    padding: 17px 22px;
+    border-radius: 12px;
+    background: #f4f6f2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.fleet-bottom p {
+    margin: 0;
+    color: #43564a;
+    font-size: 14px;
+}
+
+.fleet-bottom a {
+    color: #9b7842;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* TABLET */
+@media (max-width: 1000px) {
+    .boat-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .boat-image {
+        height: 160px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .boat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .boat-image {
+        height: 125px;
+    }
+
+    .boat-info {
+        padding: 11px;
+    }
+
+    .boat-info h3 {
+        font-size: 14px;
+        min-height: 36px;
+    }
+
+    .boat-info a {
+        font-size: 11px;
+    }
+
+    .boat-tag {
+        top: 8px;
+        left: 8px;
+        padding: 5px 7px;
+        font-size: 8px;
+    }
+
+    .fleet-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 16px;
+    }
+}
